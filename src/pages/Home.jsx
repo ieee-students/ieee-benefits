@@ -90,7 +90,7 @@ const Home = () => {
     <div className="home-dashboard">
       <section className="hero-section">
         <h1>Unlock the Benefits of IEEE <span style={{ color: '#678e1e', WebkitTextFillColor: '#678e1e' }}>Student</span> Membership</h1>
-        <p className="subtitle" style={{ maxWidth: '800px', lineHeight: '1.6', fontSize: '1.1rem' }}>IEEE is a vast organization with countless opportunities extending far beyond Student Activities. We've curated a comprehensive collection of competitions, awards, funding, and exclusive programs from across the organization to ensure you have the resources needed to advance your technologically-oriented education and career.</p>
+        <p className="subtitle">IEEE is a vast organization with countless opportunities extending far beyond Student Activities. We've curated a comprehensive collection of competitions, awards, funding, and exclusive programs from across the organization to ensure you have the resources needed to advance your technologically-oriented education and career.</p>
 
       </section>
 
@@ -111,7 +111,7 @@ const Home = () => {
                 className={`category-card glass-panel ${isDisabled ? 'disabled' : 'clickable'}`}
                 onClick={() => !isDisabled && exploreCategory('type', cat.title)}
                 title={isDisabled ? "Data not yet available for this category" : ""}
-                style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.8rem', opacity: isDisabled ? 0.5 : 1, cursor: isDisabled ? 'not-allowed' : 'pointer' }}
+                style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', gap: '0.8rem', opacity: isDisabled ? 0.5 : 1, cursor: isDisabled ? 'not-allowed' : 'pointer' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div className="card-title-wrap">

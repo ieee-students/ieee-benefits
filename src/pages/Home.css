@@ -1,19 +1,19 @@
 .home-dashboard {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .hero-section {
   text-align: center;
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   background: linear-gradient(90deg, var(--text-main), var(--text-muted));
   -webkit-background-clip: text;
   background-clip: text;
@@ -22,10 +22,29 @@
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--text-muted);
-  max-width: 600px;
-  margin-bottom: var(--space-xl);
+  max-width: 800px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .home-dashboard {
+    gap: var(--space-xl);
+  }
+
+  .hero-section {
+    padding: var(--space-xl) 0 0;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
 }
 
 .for-you-banner {
