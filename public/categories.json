@@ -35,6 +35,13 @@
     "disabled": false
   },
   {
+    "title": "ChallengeSphere Templates",
+    "icon": "Layers",
+    "description": "Sample competition models created from successful past events, allowing others to easily replicate them.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
     "title": "Fellowships",
     "icon": "Star",
     "description": "Prestigious academic and research fellowships.",
@@ -54,13 +61,6 @@
     "description": "Connect with experienced professionals for guidance.",
     "linkedPage": null,
     "disabled": true
-  },
-  {
-    "title": "ChallengeSphere Models",
-    "icon": "Layers",
-    "description": "Curated resources, rubrics, and strategies to empower local OUs to host world-class competitions.",
-    "linkedPage": null,
-    "disabled": false
   },
   {
     "title": "Other",
