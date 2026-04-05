@@ -30,11 +30,12 @@
 }
 
 @media (max-width: 800px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
   .ieee-meta-nav {
-    flex-direction: column;
-    padding: 10px 5%;
-    min-height: auto;
-    gap: 10px;
-    align-items: flex-start;
+    padding: 8px 5%;
+    font-size: 0.75em;
   }
 }
