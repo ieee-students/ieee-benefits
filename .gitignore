@@ -32,3 +32,9 @@ dist-ssr
 .env
 public/data.json
 scripts/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
