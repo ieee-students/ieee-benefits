@@ -3,6 +3,7 @@ import { useFavorites } from '../context/FavoritesContext';
 import { useBenefits } from '../hooks/useBenefits';
 import BenefitCard from '../components/BenefitCard';
 import { Link } from 'react-router-dom';
+import { Loader2 } from 'lucide-react';
 import './Explore.css'; // Reusing grid styles
 
 const Favorites = () => {
@@ -13,8 +14,6 @@ const Favorites = () => {
     return benefits.filter(b => favorites.includes(b.id));
   }, [benefits, favorites]);
 
-  if (loading) return <div className="loading-state">Loading Favorites...</div>;
-
   return (
     <div className="favorites-page">
       <header className="page-header">
@@ -23,7 +22,12 @@ const Favorites = () => {
       </header>
 
       <div className="benefits-grid">
-        {favoriteBenefits.length > 0 ? (
+        {loading ? (
+          <div className="loading-state" style={{ gridColumn: '1 / -1', minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+            <Loader2 size={32} className="animate-spin" style={{ color: 'var(--primary)' }} />
+            <span>Loading Favorites...</span>
+          </div>
+        ) : favoriteBenefits.length > 0 ? (
           favoriteBenefits.map(benefit => (
             <BenefitCard key={benefit.id} benefit={benefit} />
           ))

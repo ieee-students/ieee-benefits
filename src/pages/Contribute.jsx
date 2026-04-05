@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Pencil } from 'lucide-react';
+import { Pencil, Loader2 } from 'lucide-react';
 import { fetchOUs, fetchCategories, submitContribution } from '../services/api';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../context/BenefitsContext';
@@ -128,8 +128,6 @@ const Contribute = () => {
     }
   };
 
-  if (loading) return <div className="loading-state">Loading form...</div>;
-
   const previewBenefit = {
     id: generatedId,
     status: 'pending',
@@ -201,6 +199,12 @@ const Contribute = () => {
 
         {/* Right Side: Form */}
         <div className="form-pane glass-panel" ref={formPaneRef}>
+          {loading ? (
+            <div className="loading-state" style={{ minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+              <Loader2 size={32} className="animate-spin" style={{ color: 'var(--primary)' }} />
+              <span>Loading form data...</span>
+            </div>
+          ) : (
           <form onSubmit={handleSubmit} className="contribute-form">
             {submitResult && (
               <div className={`alert alert-${submitResult.type}`}>
@@ -315,6 +319,7 @@ const Contribute = () => {
               </button>
             </div>
           </form>
+          )}
         </div>
       </div>
     </div>

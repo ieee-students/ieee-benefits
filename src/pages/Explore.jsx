@@ -4,6 +4,7 @@ import FilterSidebar from '../components/FilterSidebar';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
+import { Loader2 } from 'lucide-react';
 import './Explore.css';
 
 const Explore = () => {
@@ -59,8 +60,6 @@ const Explore = () => {
     });
   }, [benefits, filters]);
 
-  if (loading) return <div className="loading-state">Loading Benefits Data...</div>;
-
   return (
     <div className="explore-page">
       <div className="explore-layout">
@@ -75,7 +74,12 @@ const Explore = () => {
           </header>
 
           <div className="benefits-grid">
-            {filteredBenefits.length > 0 ? (
+            {loading ? (
+              <div className="loading-state" style={{ gridColumn: '1 / -1', minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+                <Loader2 size={32} className="animate-spin" style={{ color: 'var(--primary)' }} />
+                <span>Loading Benefits Data...</span>
+              </div>
+            ) : filteredBenefits.length > 0 ? (
               filteredBenefits.map(benefit => (
                 <BenefitCard key={benefit.id} benefit={benefit} />
               ))

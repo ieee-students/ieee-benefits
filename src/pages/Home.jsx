@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Sparkles, Map, Users, Target, Landmark, Layers,
   Trophy, BadgeDollarSign, Code, GraduationCap, Wrench, Video, FileText,
-  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle
+  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle, Loader2
 } from 'lucide-react';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
@@ -86,8 +86,6 @@ const Home = () => {
     return { typesCount, sponsorsCount, eligibilitiesCount, forYouCount };
   }, [benefits, preferences]);
 
-  if (loading) return <div className="loading-state">Loading Benefits Data...</div>;
-
   return (
     <div className="home-dashboard">
       <section className="hero-section">
@@ -105,7 +103,7 @@ const Home = () => {
           {categories.map((cat) => {
             const Icon = iconMap[cat.icon] || HelpCircle;
             const count = dashboardData.typesCount[cat.title] || 0;
-            const isDisabled = cat.disabled || count === 0;
+            const isDisabled = cat.disabled || (!loading && count === 0);
 
             return (
               <div
@@ -120,7 +118,7 @@ const Home = () => {
                     <Icon size={20} className="card-icon" />
                     <h3>{cat.title}</h3>
                   </div>
-                  {!isDisabled && <div className="count-badge">{count}</div>}
+                  {!isDisabled && <div className="count-badge">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : count}</div>}
                 </div>
                 <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.4', width: '100%' }}>
                   {cat.description}
@@ -149,9 +147,9 @@ const Home = () => {
           {spos.filter(spo => spo.spoAcctClass === 'Organizational SPO').map(spo => {
             let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
             return (
-              <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${totalCount > 0 ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
+              <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
                 <h4>{spo.spoName}</h4>
-                <span className="count-text">{totalCount} available</span>
+                <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
               </div>
             );
           })}
@@ -185,9 +183,9 @@ const Home = () => {
               {displayedSocieties.map(spo => {
                 let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
                 return (
-                  <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${totalCount > 0 ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
+                  <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
                     <h4>{spo.spoName}</h4>
-                    <span className="count-text">{totalCount} available</span>
+                    <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
                   </div>
                 );
               })}
@@ -218,9 +216,9 @@ const Home = () => {
           {spos.filter(spo => spo.spoAcctClass === 'Geographic SPO').map(spo => {
             let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
             return (
-              <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${totalCount > 0 ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
+              <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
                 <h4>{spo.spoName}</h4>
-                <span className="count-text">{totalCount} available</span>
+                <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
               </div>
             );
           })}
