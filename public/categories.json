@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Competitions",
+    "icon": "Trophy",
+    "description": "Engage in contests and challenges to test your skills.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Awards",
+    "icon": "Award",
+    "description": "Recognize outstanding contributions and achievements.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Funding",
+    "icon": "BadgeDollarSign",
+    "description": "Find funding for your next project.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Programs",
+    "icon": "GraduationCap",
+    "description": "Long-term learning and development initiatives.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Flagship Events",
+    "icon": "Landmark",
+    "description": "Primary regional gatherings, congresses, and long-term development initiatives.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Fellowships",
+    "icon": "Star",
+    "description": "Prestigious academic and research fellowships.",
+    "linkedPage": null,
+    "disabled": true
+  },
+  {
+    "title": "Travel Grants",
+    "icon": "Map",
+    "description": "Financial support to attend global conferences.",
+    "linkedPage": null,
+    "disabled": true
+  },
+  {
+    "title": "Mentorship",
+    "icon": "Users",
+    "description": "Connect with experienced professionals for guidance.",
+    "linkedPage": null,
+    "disabled": true
+  },
+  {
+    "title": "ChallengeSphere Models",
+    "icon": "Layers",
+    "description": "Curated resources, rubrics, and strategies to empower local OUs to host world-class competitions.",
+    "linkedPage": null,
+    "disabled": false
+  },
+  {
+    "title": "Other",
+    "icon": "HelpCircle",
+    "description": "Miscellaneous opportunities such as papers, webinars, etc.",
+    "linkedPage": null,
+    "disabled": false
+  }
+]

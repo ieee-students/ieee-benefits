@@ -1,0 +1,2078 @@
+[
+  {
+    "searchId": "AES010IEEEAerospaceandElectronicSystemsSocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "AES010",
+    "spoName": "IEEE Aerospace and Electronic Systems Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": null,
+    "orgTags": [
+      "IEEE Aerospace and Electronic Systems Society",
+      "AES10",
+      "AESS",
+      "IEEE Aerospace & Electronic Systems Society",
+      "AES010",
+      "AES"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Aerospace and Electronic Systems Society",
+        "Aerospace and Electronic Systems Society",
+        "IEEE",
+        "Aerospace",
+        "and",
+        "Electronic",
+        "Systems",
+        "Society"
+      ],
+      "output": "IEEE Aerospace and Electronic Systems Society"
+    }
+  },
+  {
+    "searchId": "AP003IEEEAntennasandPropagationSocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "AP003",
+    "spoName": "IEEE Antennas and Propagation Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": "AP003 - Division IV",
+    "orgTags": [
+      "IEEE Antennas & Propagation Society",
+      "AP3",
+      "APS",
+      "IEEE Antennas and Propagation Society",
+      "AP03",
+      "AP003",
+      "AP"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Antennas and Propagation Society",
+        "Antennas and Propagation Society",
+        "IEEE",
+        "Antennas",
+        "and",
+        "Propagation",
+        "Society"
+      ],
+      "output": "IEEE Antennas and Propagation Society"
+    }
+  },
+  {
+    "searchId": "BT002IEEEBroadcastTechnologySocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "BT002",
+    "spoName": "IEEE Broadcast Technology Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": [
+      "BTS",
+      "BT2",
+      "BT",
+      "IEEE Broadcast Technology Society",
+      "BT002",
+      "BT02"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Broadcast Technology Society",
+        "Broadcast Technology Society",
+        "IEEE",
+        "Broadcast",
+        "Technology",
+        "Society"
+      ],
+      "output": "IEEE Broadcast Technology Society"
+    }
+  },
+  {
+    "searchId": "CAS004IEEECircuitsandSystemsSocietySocietyTechnicalSPODV01",
+    "hiddenSpoId": "CAS004",
+    "spoName": "IEEE Circuits and Systems Society",
+    "parentName": "Division I",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV01",
+    "committee": null,
+    "orgTags": [
+      "CAS004",
+      "CAS4",
+      "CASS",
+      "CAS",
+      "CAS04",
+      "IEEE Circuits and Systems Society",
+      "IEEE Circuits & Systems Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Circuits and Systems Society",
+        "Circuits and Systems Society",
+        "IEEE",
+        "Circuits",
+        "and",
+        "Systems",
+        "Society"
+      ],
+      "output": "IEEE Circuits and Systems Society"
+    }
+  },
+  {
+    "searchId": "COM019IEEECommunicationsSocietySocietyTechnicalSPODV03",
+    "hiddenSpoId": "COM019",
+    "spoName": "IEEE Communications Society",
+    "parentName": "Division III: Communications Tech",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV03",
+    "committee": null,
+    "orgTags": [
+      "COM",
+      "COMSOC",
+      "COM019",
+      "COM19",
+      "IEEE Communications Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Communications Society",
+        "Communications Society",
+        "IEEE",
+        "Communications",
+        "Society"
+      ],
+      "output": "IEEE Communications Society"
+    }
+  },
+  {
+    "searchId": "CIS011IEEEComputationalIntelligenceSocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "CIS011",
+    "spoName": "IEEE Computational Intelligence Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": "CIS011 - Division X",
+    "orgTags": [
+      "CI",
+      "CIS011",
+      "CIS",
+      "IEEE Computational Intelligence Society",
+      "CIS11"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Computational Intelligence Society",
+        "Computational Intelligence Society",
+        "IEEE",
+        "Computational",
+        "Intelligence",
+        "Society"
+      ],
+      "output": "IEEE Computational Intelligence Society"
+    }
+  },
+  {
+    "searchId": "C016IEEEComputerSocietySocietyTechnicalSPODV05",
+    "hiddenSpoId": "C016",
+    "spoName": "IEEE Computer Society",
+    "parentName": "Division V: Computer",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV05",
+    "committee": null,
+    "orgTags": [
+      "COMP",
+      "CS",
+      "IEEE Computer Society",
+      "Computer",
+      "C16",
+      "C016"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Computer Society",
+        "Computer Society",
+        "IEEE",
+        "Computer",
+        "Society"
+      ],
+      "output": "IEEE Computer Society"
+    }
+  },
+  {
+    "searchId": "CT008IEEEConsumerTechnologySocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "CT008",
+    "spoName": "IEEE Consumer Technology Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": "CT008 - Division IV",
+    "orgTags": [
+      "CT008",
+      "CT",
+      "CTS",
+      "CT08",
+      "CT8",
+      "IEEE Consumer Technology Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Consumer Technology Society",
+        "Consumer Technology Society",
+        "IEEE",
+        "Consumer",
+        "Technology",
+        "Society"
+      ],
+      "output": "IEEE Consumer Technology Society"
+    }
+  },
+  {
+    "searchId": "CS023IEEEControlSystemsSocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "CS023",
+    "spoName": "IEEE Control Systems Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": "CS023 - Division X",
+    "orgTags": [
+      "CS",
+      "CSS",
+      "IEEE Control Systems Society",
+      "CS023",
+      "CS23"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Control Systems Society",
+        "Control Systems Society",
+        "IEEE",
+        "Control",
+        "Systems",
+        "Society"
+      ],
+      "output": "IEEE Control Systems Society"
+    }
+  },
+  {
+    "searchId": "DEI032IEEEDielectricsandElectricalInsulationSocietySocietyTechnicalSPODV02",
+    "hiddenSpoId": "DEI032",
+    "spoName": "IEEE Dielectrics and Electrical Insulation Society",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": null,
+    "orgTags": [
+      "DEI032",
+      "IEEE Dielectrics and Electrical Insulation Society",
+      "DEIS",
+      "IEEE Dielectrics & Electrical Insulation Society",
+      "DEI32",
+      "DEI"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Dielectrics and Electrical Insulation Society",
+        "Dielectrics and Electrical Insulation Society",
+        "IEEE",
+        "Dielectrics",
+        "and",
+        "Electrical",
+        "Insulation",
+        "Society"
+      ],
+      "output": "IEEE Dielectrics and Electrical Insulation Society"
+    }
+  },
+  {
+    "searchId": "E025IEEEEducationSocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "E025",
+    "spoName": "IEEE Education Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "IEEE Education Society",
+      "E",
+      "E25",
+      "Educ",
+      "E025"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Education Society",
+        "Education Society",
+        "IEEE",
+        "Education",
+        "Society"
+      ],
+      "output": "IEEE Education Society"
+    }
+  },
+  {
+    "searchId": "EMC027IEEEElectromagneticCompatibilitySocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "EMC027",
+    "spoName": "IEEE Electromagnetic Compatibility Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": [
+      "EMC027",
+      "EMC27",
+      "EMCS",
+      "EMC",
+      "IEEE Electromagnetic Compatibility Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Electromagnetic Compatibility Society",
+        "Electromagnetic Compatibility Society",
+        "IEEE",
+        "Electromagnetic",
+        "Compatibility",
+        "Society"
+      ],
+      "output": "IEEE Electromagnetic Compatibility Society"
+    }
+  },
+  {
+    "searchId": "ED015IEEEElectronDevicesSocietySocietyTechnicalSPODV01",
+    "hiddenSpoId": "ED015",
+    "spoName": "IEEE Electron Devices Society",
+    "parentName": "Division I",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV01",
+    "committee": null,
+    "orgTags": [
+      "ED15",
+      "EDS",
+      "IEEE Electron Devices Society",
+      "ED015",
+      "ED"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Electron Devices Society",
+        "Electron Devices Society",
+        "IEEE",
+        "Electron",
+        "Devices",
+        "Society"
+      ],
+      "output": "IEEE Electron Devices Society"
+    }
+  },
+  {
+    "searchId": "EP021IEEEElectronicsPackagingSocietySocietyTechnicalSPODV02",
+    "hiddenSpoId": "EP021",
+    "spoName": "IEEE Electronics Packaging Society",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": null,
+    "orgTags": [
+      "EP021",
+      "EPS",
+      "EP21",
+      "IEEE Electronics Packaging Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Electronics Packaging Society",
+        "Electronics Packaging Society",
+        "IEEE",
+        "Electronics",
+        "Packaging",
+        "Society"
+      ],
+      "output": "IEEE Electronics Packaging Society"
+    }
+  },
+  {
+    "searchId": "EMB018IEEEEngineeringMedicineandBiologySocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "EMB018",
+    "spoName": "IEEE Engineering Medicine and Biology Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Engineering Medicine and Biology Society",
+        "Engineering Medicine and Biology Society",
+        "IEEE",
+        "Engineering",
+        "Medicine",
+        "and",
+        "Biology",
+        "Society"
+      ],
+      "output": "IEEE Engineering Medicine and Biology Society"
+    }
+  },
+  {
+    "searchId": "GRS029IEEEGeoscienceandRemoteSensingSocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "GRS029",
+    "spoName": "IEEE Geoscience and Remote Sensing Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": null,
+    "orgTags": [
+      "GRS29",
+      "IEEE Geoscience & Remote Sensing Society",
+      "IEEE Geoscience and Remote Sensing Society",
+      "GRS",
+      "GRSS",
+      "GRS029"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Geoscience and Remote Sensing Society",
+        "Geoscience and Remote Sensing Society",
+        "IEEE",
+        "Geoscience",
+        "and",
+        "Remote",
+        "Sensing",
+        "Society"
+      ],
+      "output": "IEEE Geoscience and Remote Sensing Society"
+    }
+  },
+  {
+    "searchId": "IE013IEEEIndustrialElectronicsSocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "IE013",
+    "spoName": "IEEE Industrial Electronics Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "IE013",
+      "IES",
+      "IE13",
+      "IE",
+      "IEEE Industrial Electronics Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Industrial Electronics Society",
+        "Industrial Electronics Society",
+        "IEEE",
+        "Industrial",
+        "Electronics",
+        "Society"
+      ],
+      "output": "IEEE Industrial Electronics Society"
+    }
+  },
+  {
+    "searchId": "IA034IEEEIndustryApplicationsSocietySocietyTechnicalSPODV02",
+    "hiddenSpoId": "IA034",
+    "spoName": "IEEE Industry Applications Society",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": null,
+    "orgTags": [
+      "IAS",
+      "IASS",
+      "IEEE Industry Applications Society",
+      "IA034",
+      "IA34"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Industry Applications Society",
+        "Industry Applications Society",
+        "IEEE",
+        "Industry",
+        "Applications",
+        "Society"
+      ],
+      "output": "IEEE Industry Applications Society"
+    }
+  },
+  {
+    "searchId": "IT012IEEEInformationTheorySocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "IT012",
+    "spoName": "IEEE Information Theory Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": "IT012 - Division IX",
+    "orgTags": [
+      "ITS",
+      "IT",
+      "IEEE Information Theory Society",
+      "IT012",
+      "IT12"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Information Theory Society",
+        "Information Theory Society",
+        "IEEE",
+        "Information",
+        "Theory",
+        "Society"
+      ],
+      "output": "IEEE Information Theory Society"
+    }
+  },
+  {
+    "searchId": "IM009IEEEInstrumentationandMeasurementSocietySocietyTechnicalSPODV02",
+    "hiddenSpoId": "IM009",
+    "spoName": "IEEE Instrumentation and Measurement Society",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": "IM009 - Division II",
+    "orgTags": [
+      "I&M",
+      "IM9",
+      "IM",
+      "IEEE Instrumentation and Measurement Society",
+      "IM009",
+      "IEEE Instrumentation & Measurement Society",
+      "IMS",
+      "IM09"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Instrumentation and Measurement Society",
+        "Instrumentation and Measurement Society",
+        "IEEE",
+        "Instrumentation",
+        "and",
+        "Measurement",
+        "Society"
+      ],
+      "output": "IEEE Instrumentation and Measurement Society"
+    }
+  },
+  {
+    "searchId": "ITSS038IEEEIntelligentTransportationSystemsSocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "ITSS038",
+    "spoName": "IEEE Intelligent Transportation Systems Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": "ITSS038 - Division IX",
+    "orgTags": [
+      "ITSS38",
+      "ITS",
+      "ITSS",
+      "ITSS038",
+      "IEEE Intelligent Transportation Systems Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Intelligent Transportation Systems Society",
+        "Intelligent Transportation Systems Society",
+        "IEEE",
+        "Intelligent",
+        "Transportation",
+        "Systems",
+        "Society"
+      ],
+      "output": "IEEE Intelligent Transportation Systems Society"
+    }
+  },
+  {
+    "searchId": "MAG033IEEEMagneticsSocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "MAG033",
+    "spoName": "IEEE Magnetics Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": [
+      "MAG",
+      "IEEE Magnetics Society",
+      "MAG033",
+      "MAG33"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Magnetics Society",
+        "Magnetics Society",
+        "IEEE",
+        "Magnetics",
+        "Society"
+      ],
+      "output": "IEEE Magnetics Society"
+    }
+  },
+  {
+    "searchId": "MTT017IEEEMicrowaveTheoryandTechnologySocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "MTT017",
+    "spoName": "IEEE Microwave Theory and Technology Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": "MTT017 - Division IV",
+    "orgTags": [
+      "MTT017",
+      "MTTS",
+      "MTT17",
+      "MTT-S",
+      "IEEE Microwave Theory and Technology Society",
+      "IEEE Microwave Theory & Technology Society",
+      "MTT"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Microwave Theory and Technology Society",
+        "Microwave Theory and Technology Society",
+        "IEEE",
+        "Microwave",
+        "Theory",
+        "and",
+        "Technology",
+        "Society"
+      ],
+      "output": "IEEE Microwave Theory and Technology Society"
+    }
+  },
+  {
+    "searchId": "NPS005IEEENuclearandPlasmaSciencesSocietySocietyTechnicalSPODV04",
+    "hiddenSpoId": "NPS005",
+    "spoName": "IEEE Nuclear and Plasma Sciences Society",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": [
+      "NPS5",
+      "NPS",
+      "IEEE Nuclear & Plasma Sciences Society",
+      "NPS005",
+      "NPS05",
+      "NPSS",
+      "IEEE Nuclear and Plasma Sciences Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Nuclear and Plasma Sciences Society",
+        "Nuclear and Plasma Sciences Society",
+        "IEEE",
+        "Nuclear",
+        "and",
+        "Plasma",
+        "Sciences",
+        "Society"
+      ],
+      "output": "IEEE Nuclear and Plasma Sciences Society"
+    }
+  },
+  {
+    "searchId": "OE022IEEEOceanicEngineeringSocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "OE022",
+    "spoName": "IEEE Oceanic Engineering Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": null,
+    "orgTags": [
+      "IEEE Oceanic Engineering Society",
+      "OE22",
+      "OE022",
+      "OE",
+      "OES"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Oceanic Engineering Society",
+        "Oceanic Engineering Society",
+        "IEEE",
+        "Oceanic",
+        "Engineering",
+        "Society"
+      ],
+      "output": "IEEE Oceanic Engineering Society"
+    }
+  },
+  {
+    "searchId": "PHO036IEEEPhotonicsSocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "PHO036",
+    "spoName": "IEEE Photonics Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": null,
+    "orgTags": [
+      "PHO036",
+      "PHO36",
+      "PHO",
+      "IEEE Photonics Society"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Photonics Society",
+        "Photonics Society",
+        "IEEE",
+        "Photonics",
+        "Society"
+      ],
+      "output": "IEEE Photonics Society"
+    }
+  },
+  {
+    "searchId": "PE031IEEEPower&EnergySocietySocietyTechnicalSPODV07",
+    "hiddenSpoId": "PE031",
+    "spoName": "IEEE Power & Energy Society",
+    "parentName": "Division VII: Energy and Power Engineering",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV07",
+    "committee": "PE031 - Division VII",
+    "orgTags": [
+      "IEEE Power & Energy Society",
+      "PE",
+      "PE31",
+      "IEEE Power and Energy Society",
+      "PE031",
+      "P&E",
+      "PES"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Power & Energy Society",
+        "Power & Energy Society",
+        "IEEE",
+        "Power",
+        "&",
+        "Energy",
+        "Society"
+      ],
+      "output": "IEEE Power & Energy Society"
+    }
+  },
+  {
+    "searchId": "PEL035IEEEPowerElectronicsSocietySocietyTechnicalSPODV02",
+    "hiddenSpoId": "PEL035",
+    "spoName": "IEEE Power Electronics Society",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": null,
+    "orgTags": [
+      "IEEE Power Electronics Society",
+      "PEL",
+      "PEL035",
+      "PELS"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Power Electronics Society",
+        "Power Electronics Society",
+        "IEEE",
+        "Power",
+        "Electronics",
+        "Society"
+      ],
+      "output": "IEEE Power Electronics Society"
+    }
+  },
+  {
+    "searchId": "PSE043IEEEProductSafetyEngineeringSocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "PSE043",
+    "spoName": "IEEE Product Safety Engineering Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "PSE",
+      "PSES",
+      "PSE043",
+      "IEEE Product Safety Engineering Society",
+      "PSE43"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Product Safety Engineering Society",
+        "Product Safety Engineering Society",
+        "IEEE",
+        "Product",
+        "Safety",
+        "Engineering",
+        "Society"
+      ],
+      "output": "IEEE Product Safety Engineering Society"
+    }
+  },
+  {
+    "searchId": "PC026IEEEProfessionalCommunicationSocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "PC026",
+    "spoName": "IEEE Professional Communication Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "PCS",
+      "PC26",
+      "PC",
+      "IEEE Professional Communication Society",
+      "PC026"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Professional Communication Society",
+        "Professional Communication Society",
+        "IEEE",
+        "Professional",
+        "Communication",
+        "Society"
+      ],
+      "output": "IEEE Professional Communication Society"
+    }
+  },
+  {
+    "searchId": "RL007IEEEReliabilitySocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "RL007",
+    "spoName": "IEEE Reliability Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "IEEE Reliability Society",
+      "RS",
+      "RL07",
+      "Rel",
+      "RL007",
+      "RL7"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Reliability Society",
+        "Reliability Society",
+        "IEEE",
+        "Reliability",
+        "Society"
+      ],
+      "output": "IEEE Reliability Society"
+    }
+  },
+  {
+    "searchId": "RA024IEEERoboticsandAutomationSocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "RA024",
+    "spoName": "IEEE Robotics and Automation Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": "RA024 - Division X",
+    "orgTags": [
+      "IEEE Robotics and Automation Society",
+      "RA024",
+      "RAS",
+      "IEEE Robotics & Automation Society",
+      "RA24",
+      "R&A",
+      "RA"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Robotics and Automation Society",
+        "Robotics and Automation Society",
+        "IEEE",
+        "Robotics",
+        "and",
+        "Automation",
+        "Society"
+      ],
+      "output": "IEEE Robotics and Automation Society"
+    }
+  },
+  {
+    "searchId": "SP001IEEESignalProcessingSocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "SP001",
+    "spoName": "IEEE Signal Processing Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": null,
+    "orgTags": [
+      "SP001",
+      "IEEE Signal Processing Society",
+      "SP1",
+      "SPS",
+      "SP01",
+      "SP"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Signal Processing Society",
+        "Signal Processing Society",
+        "IEEE",
+        "Signal",
+        "Processing",
+        "Society"
+      ],
+      "output": "IEEE Signal Processing Society"
+    }
+  },
+  {
+    "searchId": "SIT030IEEESocietyonSocialImplicationsofTechnologySocietyTechnicalSPODV06",
+    "hiddenSpoId": "SIT030",
+    "spoName": "IEEE Society on Social Implications of Technology",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "SIT030",
+      "IEEE Society on Social Implications of Technology",
+      "SSIT",
+      "SIT30",
+      "SIT"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Society on Social Implications of Technology",
+        "Society on Social Implications of Technology",
+        "IEEE",
+        "Society",
+        "on",
+        "Social",
+        "Implications",
+        "of",
+        "Technology"
+      ],
+      "output": "IEEE Society on Social Implications of Technology"
+    }
+  },
+  {
+    "searchId": "SSC037IEEESolid-StateCircuitsSocietySocietyTechnicalSPODV01",
+    "hiddenSpoId": "SSC037",
+    "spoName": "IEEE Solid-State Circuits Society",
+    "parentName": "Division I",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV01",
+    "committee": "SSC037 - Division I",
+    "orgTags": [
+      "SSC037",
+      "SSC",
+      "SSCS",
+      "IEEE Solid-State Circuits Society",
+      "SSC37"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Solid-State Circuits Society",
+        "Solid-State Circuits Society",
+        "IEEE",
+        "Solid-State",
+        "Circuits",
+        "Society"
+      ],
+      "output": "IEEE Solid-State Circuits Society"
+    }
+  },
+  {
+    "searchId": "SMC028IEEESystems,Man,andCyberneticsSocietySocietyTechnicalSPODV10",
+    "hiddenSpoId": "SMC028",
+    "spoName": "IEEE Systems, Man, and Cybernetics Society",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": null,
+    "orgTags": [
+      "SMC028",
+      "IEEE Systems Man and Cybernetics Society",
+      "SMC",
+      "IEEE Systems Man & Cybernetics Society",
+      "SMC28",
+      "SMCS"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Systems, Man, and Cybernetics Society",
+        "Systems, Man, and Cybernetics Society",
+        "IEEE",
+        "Systems,",
+        "Man,",
+        "and",
+        "Cybernetics",
+        "Society"
+      ],
+      "output": "IEEE Systems, Man, and Cybernetics Society"
+    }
+  },
+  {
+    "searchId": "TEM014IEEETechnologyandEngineeringManagementSocietySocietyTechnicalSPODV06",
+    "hiddenSpoId": "TEM014",
+    "spoName": "IEEE Technology and Engineering Management Society",
+    "parentName": "Division VI",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV06",
+    "committee": null,
+    "orgTags": [
+      "IEEE Technology & Engineering Management Society",
+      "TEM014",
+      "TEMS",
+      "IEEE Technology and Engineering Management Society",
+      "TEM",
+      "TEM14"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Technology and Engineering Management Society",
+        "Technology and Engineering Management Society",
+        "IEEE",
+        "Technology",
+        "and",
+        "Engineering",
+        "Management",
+        "Society"
+      ],
+      "output": "IEEE Technology and Engineering Management Society"
+    }
+  },
+  {
+    "searchId": "UFFC020IEEEUltrasonics,Ferroelectrics,&FrequencyControlSocietyTechnicalSPODV02",
+    "hiddenSpoId": "UFFC020",
+    "spoName": "IEEE Ultrasonics,Ferroelectrics,&Frequency Control",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Ultrasonics,Ferroelectrics,&Frequency Control",
+        "Ultrasonics,Ferroelectrics,&Frequency Control",
+        "IEEE",
+        "Ultrasonics,Ferroelectrics,&Frequency",
+        "Control"
+      ],
+      "output": "IEEE Ultrasonics,Ferroelectrics,&Frequency Control"
+    }
+  },
+  {
+    "searchId": "VT006IEEEVehicularTechnologySocietySocietyTechnicalSPODV09",
+    "hiddenSpoId": "VT006",
+    "spoName": "IEEE Vehicular Technology Society",
+    "parentName": "Division IX: Signals and Applications",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Society",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV09",
+    "committee": null,
+    "orgTags": [
+      "IEEE Vehicular Technology Society",
+      "VTS",
+      "VT6",
+      "VT006",
+      "VT06",
+      "VT"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Vehicular Technology Society",
+        "Vehicular Technology Society",
+        "IEEE",
+        "Vehicular",
+        "Technology",
+        "Society"
+      ],
+      "output": "IEEE Vehicular Technology Society"
+    }
+  },
+  {
+    "searchId": "BIO046IEEEBiometricsCouncilCouncilTechnicalSPODV10",
+    "hiddenSpoId": "BIO046",
+    "spoName": "IEEE Biometrics Council",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": "BIO046 - Division X",
+    "orgTags": [
+      "BIO046",
+      "BIO",
+      "IEEE Biometrics Council",
+      "BIO46"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Biometrics Council",
+        "Biometrics Council",
+        "IEEE",
+        "Biometrics",
+        "Council"
+      ],
+      "output": "IEEE Biometrics Council"
+    }
+  },
+  {
+    "searchId": "CEDA044IEEECouncilonElectronicDesignAutomationCouncilTechnicalSPODV01",
+    "hiddenSpoId": "CEDA044",
+    "spoName": "IEEE Council on Electronic Design Automation",
+    "parentName": "Division I",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV01",
+    "committee": null,
+    "orgTags": [
+      "CEDA",
+      "IEEE Council on Electronic Design Automation",
+      "CEDA044",
+      "CEDA44"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Council on Electronic Design Automation",
+        "Council on Electronic Design Automation",
+        "IEEE",
+        "Council",
+        "on",
+        "Electronic",
+        "Design",
+        "Automation"
+      ],
+      "output": "IEEE Council on Electronic Design Automation"
+    }
+  },
+  {
+    "searchId": "RFID741IEEECouncilonRFIDCouncilTechnicalSPODV04",
+    "hiddenSpoId": "RFID741",
+    "spoName": "IEEE Council on RFID",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Council on RFID",
+        "Council on RFID",
+        "IEEE",
+        "Council",
+        "on",
+        "RFID"
+      ],
+      "output": "IEEE Council on RFID"
+    }
+  },
+  {
+    "searchId": "CSC041IEEECouncilonSuperconductivityCouncilTechnicalSPODV04",
+    "hiddenSpoId": "CSC041",
+    "spoName": "IEEE Council on Superconductivity",
+    "parentName": "Division IV: Electromagnetics and Radiation",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV04",
+    "committee": null,
+    "orgTags": [
+      "ASC",
+      "SCS",
+      "ASC41",
+      "ASC041",
+      "IEEE Council on Superconductivity"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Council on Superconductivity",
+        "Council on Superconductivity",
+        "IEEE",
+        "Council",
+        "on",
+        "Superconductivity"
+      ],
+      "output": "IEEE Council on Superconductivity"
+    }
+  },
+  {
+    "searchId": "NANO042IEEENanotechnologyCouncilCouncilTechnicalSPODV01",
+    "hiddenSpoId": "NANO042",
+    "spoName": "IEEE Nanotechnology Council",
+    "parentName": "Division I",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV01",
+    "committee": "NANO042 - Division I",
+    "orgTags": [
+      "NANO42",
+      "NANO",
+      "IEEE Nanotechnology Council",
+      "NANO042"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Nanotechnology Council",
+        "Nanotechnology Council",
+        "IEEE",
+        "Nanotechnology",
+        "Council"
+      ],
+      "output": "IEEE Nanotechnology Council"
+    }
+  },
+  {
+    "searchId": "SEN039IEEESensorsCouncilCouncilTechnicalSPODV10",
+    "hiddenSpoId": "SEN039",
+    "spoName": "IEEE Sensors Council",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": null,
+    "orgTags": [
+      "SEN39",
+      "SEN039",
+      "Sensors",
+      "SEN",
+      "IEEE Sensors Council"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Sensors Council",
+        "Sensors Council",
+        "IEEE",
+        "Sensors",
+        "Council"
+      ],
+      "output": "IEEE Sensors Council"
+    }
+  },
+  {
+    "searchId": "SYS045IEEESystemsCouncilCouncilTechnicalSPODV10",
+    "hiddenSpoId": "SYS045",
+    "spoName": "IEEE Systems Council",
+    "parentName": "Division X",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV10",
+    "committee": null,
+    "orgTags": [
+      "SYSC",
+      "SYS45",
+      "SYS045",
+      "SYS",
+      "IEEE Systems Council"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Systems Council",
+        "Systems Council",
+        "IEEE",
+        "Systems",
+        "Council"
+      ],
+      "output": "IEEE Systems Council"
+    }
+  },
+  {
+    "searchId": "TEC802IEEETransportationElectrificationCouncilCouncilTechnicalSPODV02",
+    "hiddenSpoId": "TEC802",
+    "spoName": "IEEE Transportation Electrification Council",
+    "parentName": "Division II",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Technical SPO",
+    "spoAcctType": "Council",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": "Division",
+    "spoParentClass": "Technical SPO",
+    "parentId": "DV02",
+    "committee": "TEC802 - Division II",
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Transportation Electrification Council",
+        "Transportation Electrification Council",
+        "IEEE",
+        "Transportation",
+        "Electrification",
+        "Council"
+      ],
+      "output": "IEEE Transportation Electrification Council"
+    }
+  },
+  {
+    "searchId": "R1NortheasternUSA-Region1RegionGeographicSPOR1",
+    "hiddenSpoId": "R1",
+    "spoName": "Northeastern USA - Region 1",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R1",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Northeastern USA - Region 1",
+        "Northeastern",
+        "USA",
+        "-",
+        "Region",
+        "1"
+      ],
+      "output": "Northeastern USA - Region 1"
+    }
+  },
+  {
+    "searchId": "R2EasternUSA-Region2RegionGeographicSPOR2",
+    "hiddenSpoId": "R2",
+    "spoName": "Eastern USA - Region 2",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R2",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Eastern USA - Region 2",
+        "Eastern",
+        "USA",
+        "-",
+        "Region",
+        "2"
+      ],
+      "output": "Eastern USA - Region 2"
+    }
+  },
+  {
+    "searchId": "R3SoutheasternUSA-Region3RegionGeographicSPOR3",
+    "hiddenSpoId": "R3",
+    "spoName": "Southeastern USA - Region 3",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R3",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Southeastern USA - Region 3",
+        "Southeastern",
+        "USA",
+        "-",
+        "Region",
+        "3"
+      ],
+      "output": "Southeastern USA - Region 3"
+    }
+  },
+  {
+    "searchId": "R4CentralUSA-Region4RegionGeographicSPOR4",
+    "hiddenSpoId": "R4",
+    "spoName": "Central USA - Region 4",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R4",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Central USA - Region 4",
+        "Central",
+        "USA",
+        "-",
+        "Region",
+        "4"
+      ],
+      "output": "Central USA - Region 4"
+    }
+  },
+  {
+    "searchId": "R5SouthwesternUSA-Region5RegionGeographicSPOR5",
+    "hiddenSpoId": "R5",
+    "spoName": "Southwestern USA - Region 5",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R5",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Southwestern USA - Region 5",
+        "Southwestern",
+        "USA",
+        "-",
+        "Region",
+        "5"
+      ],
+      "output": "Southwestern USA - Region 5"
+    }
+  },
+  {
+    "searchId": "R6WesternUSA-Region6RegionGeographicSPOR6",
+    "hiddenSpoId": "R6",
+    "spoName": "Western USA - Region 6",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R6",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Western USA - Region 6",
+        "Western",
+        "USA",
+        "-",
+        "Region",
+        "6"
+      ],
+      "output": "Western USA - Region 6"
+    }
+  },
+  {
+    "searchId": "R7Canada-Region7RegionGeographicSPOR7",
+    "hiddenSpoId": "R7",
+    "spoName": "Canada - Region 7",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R7",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Canada - Region 7",
+        "Canada",
+        "-",
+        "Region",
+        "7"
+      ],
+      "output": "Canada - Region 7"
+    }
+  },
+  {
+    "searchId": "R8Europe,MiddleEast,Africa-Region8RegionGeographicSPOR8",
+    "hiddenSpoId": "R8",
+    "spoName": "Europe, Middle East, Africa - Region 8",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R8",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Europe, Middle East, Africa - Region 8",
+        "Europe,",
+        "Middle",
+        "East,",
+        "Africa",
+        "-",
+        "Region",
+        "8"
+      ],
+      "output": "Europe, Middle East, Africa - Region 8"
+    }
+  },
+  {
+    "searchId": "R9LatinAmerica-Region9RegionGeographicSPOR9",
+    "hiddenSpoId": "R9",
+    "spoName": "Latin America - Region 9",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R9",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Latin America - Region 9",
+        "Latin",
+        "America",
+        "-",
+        "Region",
+        "9"
+      ],
+      "output": "Latin America - Region 9"
+    }
+  },
+  {
+    "searchId": "R0Asia&Pacific-Region10RegionGeographicSPOR0",
+    "hiddenSpoId": "R0",
+    "spoName": "Asia & Pacific - Region 10",
+    "parentName": null,
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Geographic SPO",
+    "spoAcctType": "Region",
+    "hasChildren": true,
+    "menuParent": null,
+    "spoParentTyp": null,
+    "spoParentClass": null,
+    "parentId": "R0",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "Asia & Pacific - Region 10",
+        "Asia",
+        "&",
+        "Pacific",
+        "-",
+        "Region",
+        "10"
+      ],
+      "output": "Asia & Pacific - Region 10"
+    }
+  },
+  {
+    "searchId": "CMA7400MGAStudentActivitiesCommitteeCommitteeOrganizationalSPOCMA7000",
+    "hiddenSpoId": "CMA7400",
+    "spoName": "MGA Student Activities Committee",
+    "parentName": "MGA Member Engagement and Life Cycle Committee",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Committee",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMA7000",
+    "committee": "MGA Committees",
+    "orgTags": [
+      "MGA Student Activities Committee",
+      "SAC"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "MGA Student Activities Committee",
+        "MGA",
+        "Student",
+        "Activities",
+        "Committee"
+      ],
+      "output": "MGA Student Activities Committee"
+    }
+  },
+  {
+    "searchId": "CMA9100IEEEYoungProfessionalsCommitteeCommitteeOrganizationalSPOCMA7000",
+    "hiddenSpoId": "CMA9100",
+    "spoName": "IEEE Young Professionals Committee",
+    "parentName": "MGA Member Engagement and Life Cycle Committee",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Committee",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMA7000",
+    "committee": "MGA Committees",
+    "orgTags": [
+      "GOLD",
+      "YP",
+      "IEEE Young Professionals Committee"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Young Professionals Committee",
+        "Young Professionals Committee",
+        "IEEE",
+        "Young",
+        "Professionals",
+        "Committee"
+      ],
+      "output": "IEEE Young Professionals Committee"
+    }
+  },
+  {
+    "searchId": "CMC4000IEEEWomenInEngineeringCommitteeOrganizationalSPOCMC5300",
+    "hiddenSpoId": "CMC4000",
+    "spoName": "IEEE Women In Engineering",
+    "parentName": "IEEE Member and Geographic Activities Board",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Board",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMC5300",
+    "committee": "MGA Committees",
+    "orgTags": [
+      "WIE",
+      "WIE050",
+      "WIE50",
+      "IEEE Women in Engineering"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Women In Engineering",
+        "Women In Engineering",
+        "IEEE",
+        "Women",
+        "In",
+        "Engineering"
+      ],
+      "output": "IEEE Women In Engineering"
+    }
+  },
+  {
+    "searchId": "CMC1200IEEELifeMembersCommitteeCommitteeOrganizationalSPOCMC5300",
+    "hiddenSpoId": "CMC1200",
+    "spoName": "IEEE Life Members Committee",
+    "parentName": "IEEE Member and Geographic Activities Board",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Board",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMC5300",
+    "committee": "MGA Committees",
+    "orgTags": [
+      "IEEE Life Members Committee",
+      "LMC"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Life Members Committee",
+        "Life Members Committee",
+        "IEEE",
+        "Life",
+        "Members",
+        "Committee"
+      ],
+      "output": "IEEE Life Members Committee"
+    }
+  },
+  {
+    "searchId": "CMA6500MGAAwardsandRecognitionCommitteeCommitteeOrganizationalSPOCMA7000",
+    "hiddenSpoId": "CMA6500",
+    "spoName": "MGA Awards and Recognition Committee",
+    "parentName": "MGA Member Engagement and Life Cycle Committee",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Committee",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMA7000",
+    "committee": "MGA Committees",
+    "orgTags": [
+      "MGA ARC",
+      "ARC",
+      "Awards and Recognition Committee"
+    ],
+    "orgUnitSuggest": {
+      "input": [
+        "MGA Awards and Recognition Committee",
+        "MGA",
+        "Awards",
+        "and",
+        "Recognition",
+        "Committee"
+      ],
+      "output": "MGA Awards and Recognition Committee"
+    }
+  },
+  {
+    "searchId": "CMA9200MGATrainingCommitteeCommitteeOrganizationalSPOCMC5300",
+    "hiddenSpoId": "CMA9200",
+    "spoName": "MGA Training Committee",
+    "parentName": "IEEE Member and Geographic Activities Board",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Board",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMC5300",
+    "committee": "MGA Committees",
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "MGA Training Committee",
+        "MGA",
+        "Training",
+        "Committee"
+      ],
+      "output": "MGA Training Committee"
+    }
+  }
+]

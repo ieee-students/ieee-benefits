@@ -1,0 +1,324 @@
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { Pencil } from 'lucide-react';
+import { fetchOUs, fetchCategories, submitContribution } from '../services/api';
+import BenefitCard from '../components/BenefitCard';
+import { useBenefits } from '../context/BenefitsContext';
+import './Contribute.css';
+
+const Contribute = () => {
+  const [spos, setSpos] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState(null);
+  const { benefits } = useBenefits();
+
+  const [formData, setFormData] = useState({
+    spoName: '',
+    category: '',
+    title: '',
+    description: '',
+    url: '',
+    date: '',
+    deadline: '',
+    ieeeMembershipRequired: false,
+    student: false,
+    annual: false,
+    createdByName: '',
+    createdByEmail: ''
+  });
+
+  useEffect(() => {
+    Promise.all([fetchOUs(), fetchCategories()]).then(([sposData, categoriesData]) => {
+      setSpos(sposData);
+      setCategories(categoriesData);
+      setLoading(false);
+    });
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const getSlug = (text) => text?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || '';
+
+  const generatedId = useMemo(() => {
+    const spo = spos.find(s => s.spoName === formData.spoName);
+    const hiddenSpoId = spo ? spo.hiddenSpoId : 'spoid';
+    const categorySlug = getSlug(formData.category) || 'category';
+    const titleSlug = getSlug(formData.title) || 'title';
+    return `${hiddenSpoId}-${categorySlug}-${titleSlug}`;
+  }, [formData.spoName, formData.category, formData.title, spos]);
+
+  const existingBenefits = useMemo(() => {
+    if (!formData.spoName) return [];
+    return benefits.filter(b => {
+      if (b.spoName !== formData.spoName) return false;
+      if (formData.category && b.category !== formData.category) return false;
+      return true;
+    });
+  }, [benefits, formData.spoName, formData.category]);
+
+  const formPaneRef = useRef(null);
+
+  // Normalizes a value to YYYY-MM-DD for <input type="date">, returns '' if invalid
+  const toDateInputValue = (val) => {
+    if (!val) return '';
+    // Already YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(val)) return val;
+    // Try parsing as a date
+    const d = new Date(val);
+    if (!isNaN(d.getTime())) {
+      return d.toISOString().split('T')[0];
+    }
+    return '';
+  };
+
+  const handleEditBenefit = (benefit) => {
+    setFormData({
+      spoName: benefit.spoName || '',
+      category: benefit.category || '',
+      title: benefit.title || '',
+      description: benefit.description || '',
+      url: benefit.url || '',
+      date: toDateInputValue(benefit.date),
+      deadline: toDateInputValue(benefit.deadline),
+      ieeeMembershipRequired: !!benefit.ieeeMembershipRequired,
+      student: !!benefit.student,
+      annual: !!benefit.annual,
+      createdByName: '',
+      createdByEmail: ''
+    });
+    // Scroll the form into view on mobile, or just highlight it
+    if (formPaneRef.current) {
+      formPaneRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitResult(null);
+
+    const payload = {
+      ...formData,
+      id: generatedId
+    };
+
+    try {
+      const result = await submitContribution(payload);
+
+      if (result.success) {
+        setSubmitResult({ type: 'success', message: 'Contribution submitted. It is now pending verification.' });
+        setFormData({
+          spoName: '', category: '', title: '', description: '', url: '',
+          date: '', deadline: '', ieeeMembershipRequired: false, student: false,
+          annual: false, createdByName: '', createdByEmail: ''
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitResult({ type: 'error', message: err.message || 'An error occurred during submission.' });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (loading) return <div className="loading-state">Loading form...</div>;
+
+  const previewBenefit = {
+    id: generatedId,
+    status: 'pending',
+    spoName: formData.spoName || 'Select an Organization',
+    category: formData.category || 'Category',
+    title: formData.title || 'Benefit Title',
+    description: formData.description || 'Description of the opportunity will appear here.',
+    url: formData.url,
+    date: formData.date,
+    deadline: formData.deadline,
+    ieeeMembershipRequired: formData.ieeeMembershipRequired,
+    student: formData.student,
+    annual: formData.annual
+  };
+
+  return (
+    <div className="contribute-page">
+      <header className="page-header">
+        <h1>Contribute a Benefit</h1>
+        <p className="subtitle text-muted" style={{ maxWidth: 'none', width: '100%' }}>
+          Help us grow the IEEE Benefits by submitting a new benefit.
+        </p>
+      </header>
+
+      <div className="contribute-layout">
+        {/* Left Side: Live Preview */}
+        <div className="preview-pane">
+          <div className="preview-sticky">
+            <h3>Live Card Preview</h3>
+            <p className="text-muted" style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>
+              This is how your contribution will appear on the platform once verified and approved.
+            </p>
+            <div className="preview-container">
+              <BenefitCard benefit={previewBenefit} />
+            </div>
+
+            {formData.spoName && (
+              <div className="existing-benefits-preview glass-panel">
+                <h4>Existing Benefits</h4>
+                <p className="text-muted" style={{ fontSize: '0.8rem', marginBottom: '0.8rem' }}>
+                  Review these existing entries to avoid duplicates.
+                </p>
+                {existingBenefits.length > 0 ? (
+                  <ul className="minimal-benefit-list">
+                    {existingBenefits.map(b => (
+                      <li key={b.id} title={b.title}>
+                        <span className="badge small-badge">{b.category}</span>
+                        <span className="benefit-title">{b.title}</span>
+                        <button
+                          className="edit-benefit-btn"
+                          onClick={() => handleEditBenefit(b)}
+                          title="Load into form for editing"
+                          aria-label={`Edit ${b.title}`}
+                        >
+                          <Pencil size={14} />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-muted" style={{ fontSize: '0.85rem', fontStyle: 'italic' }}>
+                    No similar benefits found.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right Side: Form */}
+        <div className="form-pane glass-panel" ref={formPaneRef}>
+          <form onSubmit={handleSubmit} className="contribute-form">
+            {submitResult && (
+              <div className={`alert alert-${submitResult.type}`}>
+                {submitResult.message}
+              </div>
+            )}
+
+            <div className="form-section">
+              <h3 className="section-title">Benefit Details</h3>
+
+              <div className="form-group grid-2">
+                <div className="input-wrap">
+                  <label>Organization Unit *</label>
+                  <select name="spoName" value={formData.spoName} onChange={handleInputChange} required>
+                    <option value="" disabled>Select Organization</option>
+                    {spos.map(spo => (
+                      <option key={spo.hiddenSpoId} value={spo.spoName}>{spo.spoName}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="input-wrap">
+                  <label>Category *</label>
+                  <select name="category" value={formData.category} onChange={handleInputChange} required>
+                    <option value="" disabled>Select Category</option>
+                    {categories.map(cat => (
+                      <option key={cat.title} value={cat.title}>{cat.title}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Benefit Title *</label>
+                <input type="text" name="title" value={formData.title} onChange={handleInputChange} required placeholder="e.g. Richard E. Merwin Student Scholarship" />
+              </div>
+
+              <div className="form-group">
+                <label>System Generated ID</label>
+                <input type="text" value={generatedId} readOnly className="readonly-input" />
+              </div>
+
+
+
+              <div className="form-group">
+                <label>Description *</label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  required
+                  rows="4"
+                  placeholder="Provide a clear and concise description of the benefit."
+                  maxLength="500"
+                ></textarea>
+                <div className="char-count">{formData.description.length}/500</div>
+              </div>
+
+              <div className="form-group">
+                <label>Primary Link (URL) *</label>
+                <input type="url" name="url" value={formData.url} onChange={handleInputChange} required placeholder="https://..." />
+              </div>
+            </div>
+
+            <div className="form-section">
+              <h3 className="section-title">Timeline & Eligibility</h3>
+              <div className="form-group grid-2">
+                <div className="input-wrap">
+                  <label>Event Date (Optional)</label>
+                  <input type="date" name="date" value={formData.date} onChange={handleInputChange} />
+                  <p className="field-hint">Date on which the event, competition, or activity will take place.</p>
+                </div>
+                <div className="input-wrap">
+                  <label>Application Deadline (Optional)</label>
+                  <input type="date" name="deadline" value={formData.deadline} onChange={handleInputChange} />
+                  <p className="field-hint">Final date for registrations or applications. This is typically before the event date.</p>
+                </div>
+              </div>
+
+              <div className="form-group checkbox-group">
+                <label className="checkbox-label">
+                  <input type="checkbox" name="ieeeMembershipRequired" checked={formData.ieeeMembershipRequired} onChange={handleInputChange} />
+                  <span className="checkbox-text">IEEE Membership Required [Indicate if participation or eligibility is restricted to IEEE members only. Leave unchecked if the opportunity is open to non-members.]</span>
+                </label>
+                <label className="checkbox-label">
+                  <input type="checkbox" name="student" checked={formData.student} onChange={handleInputChange} />
+                  <span className="checkbox-text">Student-Only Eligibility [Indicate if this opportunity is limited to university students (undergraduate or postgraduate, e.g., MSc, PhD). Typically applicable to IEEE Student or Graduate Student Members.]</span>
+                </label>
+                <label className="checkbox-label">
+                  <input type="checkbox" name="annual" checked={formData.annual} onChange={handleInputChange} />
+                  <span className="checkbox-text">Annual Recurring Benefit [Indicate if this opportunity is offered annually. If selected, details will be reviewed and updated each year in coordination with you.]</span>
+                </label>
+              </div>
+            </div>
+
+            <div className="form-section">
+              <h3 className="section-title">Contributor Information</h3>
+              <div className="form-group grid-2">
+                <div className="input-wrap">
+                  <label>Your Name *</label>
+                  <input type="text" name="createdByName" value={formData.createdByName} onChange={handleInputChange} required placeholder="Top Contributor" />
+                </div>
+                <div className="input-wrap">
+                  <label>Your Email *</label>
+                  <input type="email" name="createdByEmail" value={formData.createdByEmail} onChange={handleInputChange} required placeholder="top.contributor@ieee.org" />
+                </div>
+              </div>
+            </div>
+
+            <div className="form-actions">
+              <button type="submit" className="btn btn-primary submit-btn" disabled={submitting}>
+                {submitting ? 'Submitting...' : 'Submit Contribution'}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contribute;

@@ -1,0 +1,50 @@
+.ieee-footer {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: 30px 5%;
+  border-top: 1px solid var(--card-border);
+  text-align: center;
+  margin-top: auto;
+}
+
+.ieee-footer .footer-links {
+  margin-bottom: 20px;
+}
+
+.ieee-footer a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.ieee-footer a:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.ieee-footer .divider {
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+.ieee-footer .copyright {
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .ieee-footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .ieee-footer .divider {
+    display: none;
+  }
+}

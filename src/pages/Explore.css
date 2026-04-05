@@ -1,0 +1,62 @@
+.explore-layout {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.sidebar-container {
+  flex: 0 0 230px;
+}
+
+.content-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-header {
+  margin-bottom: var(--space-xl);
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--card-border);
+}
+
+.empty-state h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--text-main);
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+  .explore-layout {
+    flex-direction: column;
+  }
+  .sidebar-container {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,192 @@
+.filter-sidebar {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  height: max-content;
+  position: sticky;
+  top: 100px; /* Below navbar */
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: var(--space-sm);
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+.filter-group h4 {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-subheading {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  opacity: 0.8;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.25rem;
+}
+
+.filter-subheading:first-of-type {
+  margin-top: 0;
+}
+
+.filter-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.filter-label:hover {
+  color: var(--text-main);
+}
+
+.filter-label input {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid var(--btn-border);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.filter-label input:checked ~ .checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.filter-label input:checked ~ .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ── Mobile toggle button (hidden on desktop) ── */
+.filter-mobile-toggle {
+  display: none;
+}
+
+/* ── Mobile responsive: collapsible filters ── */
+@media (max-width: 900px) {
+  .filter-sidebar {
+    padding: 0;
+    gap: 0;
+    position: static;
+  }
+
+  .filter-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.85rem var(--space-lg);
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .filter-mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .filter-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    line-height: 1;
+  }
+
+  .filter-chevron {
+    transition: transform 0.3s ease;
+  }
+
+  .filter-chevron.rotated {
+    transform: rotate(180deg);
+  }
+
+  .filter-body {
+    display: none;
+    padding: 0 var(--space-lg) var(--space-lg);
+    flex-direction: column;
+    gap: var(--space-lg);
+    animation: filterSlideIn 0.3s ease;
+  }
+
+  .mobile-expanded .filter-body {
+    display: flex;
+  }
+
+  @keyframes filterSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
