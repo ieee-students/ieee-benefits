@@ -35,7 +35,7 @@ const BenefitCard = ({ benefit, spoInfo, spoNameToId }) => {
     <div className={`benefit-card glass-panel clickable ${isExpanded ? 'expanded' : ''}`} onClick={handleCardClick}>
       <div className="card-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-          <span className="badge">{benefit.category}</span>
+          <span className={`badge badge-${(benefit.category || '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>{benefit.category}</span>
           {benefit.status === 'pending' && <span className="status-badge pending">Pending Verification</span>}
         </div>
         <button

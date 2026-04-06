@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Sparkles, Map, Users, Target, Landmark, Layers,
   Trophy, BadgeDollarSign, Code, GraduationCap, Wrench, Video, FileText,
-  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle, Loader2
+  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle, Loader2, Lock
 } from 'lucide-react';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
@@ -111,10 +111,10 @@ const Home = () => {
             return (
               <div
                 key={cat.title}
-                className={`category-card glass-panel ${isDisabled ? 'disabled' : 'clickable'}`}
+                className={`category-card glass-panel ${isDisabled ? 'disabled' : 'clickable'} cat-${cat.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                 onClick={() => !isDisabled && exploreCategory('type', cat.title)}
                 title={isDisabled ? "Data not yet available for this category" : ""}
-                style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', gap: '0.8rem', opacity: isDisabled ? 0.5 : 1, cursor: isDisabled ? 'not-allowed' : 'pointer' }}
+                style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', gap: '0.8rem', opacity: isDisabled ? 0.4 : 1, cursor: isDisabled ? 'not-allowed' : 'pointer', pointerEvents: isDisabled ? 'none' : 'auto' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div className="card-title-wrap">
@@ -128,7 +128,9 @@ const Home = () => {
                 </p>
                 {isDisabled && (
                   <div style={{ display: 'flex', justifyContent: 'center', marginTop: 'auto' }}>
-                    <div className="count-badge" style={{ background: 'var(--bg-secondary)', color: 'var(--text-muted)' }}>Coming Soon</div>
+                    <div className="count-badge" style={{ background: 'var(--btn-bg)', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem' }}>
+                      <Lock size={12} /> Coming Soon
+                    </div>
                   </div>
                 )}
               </div>
@@ -157,7 +159,7 @@ const Home = () => {
                 <div className="spo-card-content">
                   <h4 className="spo-card-title">{spo.spoName}</h4>
                   <span className="spo-count">
-                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>}
                   </span>
                 </div>
               </div>
@@ -200,7 +202,7 @@ const Home = () => {
                     <div className="spo-card-content">
                       <h4 className="spo-card-title">{spo.spoName}</h4>
                       <span className="spo-count">
-                        {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                        {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>}
                       </span>
                     </div>
                   </div>
@@ -240,7 +242,7 @@ const Home = () => {
                 <div className="spo-card-content">
                   <h4 className="spo-card-title">{spo.spoName}</h4>
                   <span className="spo-count">
-                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>}
                   </span>
                 </div>
               </div>

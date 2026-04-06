@@ -4,69 +4,89 @@
     "icon": "Trophy",
     "description": "Engage in contests and challenges to test your skills.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#2563eb",
+    "textColor": "#ffffff"
   },
   {
     "title": "Awards",
     "icon": "Award",
     "description": "Recognize outstanding contributions and achievements.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#facc15",
+    "textColor": "#422006"
   },
   {
     "title": "Funding",
     "icon": "BadgeDollarSign",
     "description": "Find funding for your next project.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#16a34a",
+    "textColor": "#ffffff"
   },
   {
     "title": "Programs",
     "icon": "GraduationCap",
     "description": "Long-term learning and development initiatives.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#4f46e5",
+    "textColor": "#ffffff"
   },
   {
     "title": "Flagship Events",
     "icon": "Landmark",
     "description": "Primary regional gatherings, congresses, and long-term development initiatives.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#e11d48",
+    "textColor": "#ffffff"
   },
   {
     "title": "ChallengeSphere Templates",
     "icon": "Layers",
     "description": "Sample competition models created from successful past events, allowing others to easily replicate them.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#0891b2",
+    "textColor": "#ffffff"
   },
   {
     "title": "Fellowships",
     "icon": "Star",
     "description": "Prestigious academic and research fellowships.",
     "linkedPage": null,
-    "disabled": true
+    "disabled": true,
+    "color": "#9333ea",
+    "textColor": "#ffffff"
   },
   {
     "title": "Travel Grants",
     "icon": "Map",
     "description": "Financial support to attend global conferences.",
     "linkedPage": null,
-    "disabled": true
+    "disabled": true,
+    "color": "#ea580c",
+    "textColor": "#ffffff"
   },
   {
     "title": "Mentorship",
     "icon": "Users",
     "description": "Connect with experienced professionals for guidance.",
     "linkedPage": null,
-    "disabled": true
+    "disabled": true,
+    "color": "#0d9488",
+    "textColor": "#ffffff"
   },
   {
     "title": "Other",
     "icon": "HelpCircle",
     "description": "Miscellaneous opportunities such as papers, webinars, etc.",
     "linkedPage": null,
-    "disabled": false
+    "disabled": false,
+    "color": "#475569",
+    "textColor": "#ffffff"
   }
 ]

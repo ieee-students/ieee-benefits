@@ -176,12 +176,10 @@
   background: linear-gradient(135deg, var(--glass-bg-hover, var(--glass-bg)) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
-.small-card:not(.has-items) {
-  opacity: 0.8;
-}
-
-.small-card:not(.has-items):hover {
-  opacity: 1;
+.small-card:not(.has-items):not(.show-all-card) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .spo-card-header {
@@ -245,7 +243,7 @@
   transition: all 0.2s ease;
 }
 
-.show-all-card:hover {
+.category-card.small-card.show-all-card:hover {
   background: var(--primary);
   border-color: var(--primary);
   border-left-color: var(--primary) !important;
