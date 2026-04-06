@@ -136,6 +136,11 @@ const Contribute = () => {
     }
   };
 
+  const getCategoryStyle = (catName) => {
+    const cat = categories.find(c => c.title.toLowerCase() === (catName || '').toLowerCase());
+    return cat ? { backgroundColor: cat.color, color: cat.textColor, borderColor: cat.color } : {};
+  };
+
   const previewBenefit = {
     id: generatedId,
     status: 'pending',
@@ -182,7 +187,7 @@ const Contribute = () => {
                   <ul className="minimal-benefit-list">
                     {existingBenefits.map(b => (
                       <li key={b.id} title={b.title}>
-                        <span className="badge small-badge">{b.category}</span>
+                        <span className="badge small-badge" style={getCategoryStyle(b.category)}>{b.category}</span>
                         <span className="benefit-title">{b.title}</span>
                         <button
                           className="edit-benefit-btn"
@@ -225,7 +230,7 @@ const Contribute = () => {
 
               <div className="form-group grid-2">
                 <div className="input-wrap">
-                  <label>Organization Unit *</label>
+                  <label>Organization Unit <span style={{ color: '#ef4444' }}>*</span></label>
                   <select name="spoName" value={formData.spoName} onChange={handleInputChange} required>
                     <option value="" disabled>Select Organization</option>
                     {spos.map(spo => (
@@ -234,7 +239,7 @@ const Contribute = () => {
                   </select>
                 </div>
                 <div className="input-wrap">
-                  <label>Category *</label>
+                  <label>Category <span style={{ color: '#ef4444' }}>*</span></label>
                   <select name="category" value={formData.category} onChange={handleInputChange} required>
                     <option value="" disabled>Select Category</option>
                     {categories.map(cat => (
@@ -245,7 +250,7 @@ const Contribute = () => {
               </div>
 
               <div className="form-group">
-                <label>Benefit Title *</label>
+                <label>Benefit Title <span style={{ color: '#ef4444' }}>*</span></label>
                 <input type="text" name="title" value={formData.title} onChange={handleInputChange} required placeholder="e.g. Richard E. Merwin Student Scholarship" />
               </div>
 
@@ -257,7 +262,7 @@ const Contribute = () => {
 
 
               <div className="form-group">
-                <label>Description *</label>
+                <label>Description <span style={{ color: '#ef4444' }}>*</span></label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -271,7 +276,7 @@ const Contribute = () => {
               </div>
 
               <div className="form-group">
-                <label>Primary Link (URL) *</label>
+                <label>Primary Link (URL) <span style={{ color: '#ef4444' }}>*</span></label>
                 <input type="url" name="url" value={formData.url} onChange={handleInputChange} required placeholder="https://..." />
               </div>
             </div>
@@ -311,11 +316,11 @@ const Contribute = () => {
               <h3 className="section-title">Contributor Information</h3>
               <div className="form-group grid-2">
                 <div className="input-wrap">
-                  <label>Your Name *</label>
+                  <label>Your Name <span style={{ color: '#ef4444' }}>*</span></label>
                   <input type="text" name="createdByName" value={formData.createdByName} onChange={handleInputChange} required placeholder="Top Contributor" />
                 </div>
                 <div className="input-wrap">
-                  <label>Your Email *</label>
+                  <label>Your Email <span style={{ color: '#ef4444' }}>*</span></label>
                   <input type="email" name="createdByEmail" value={formData.createdByEmail} onChange={handleInputChange} required placeholder="top.contributor@ieee.org" />
                 </div>
               </div>
