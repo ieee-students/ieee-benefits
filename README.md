@@ -162,6 +162,7 @@ The app uses environment variables to connect to the Google Apps Script backend 
 | ------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `APP_SCRIPT_URL`          | Yes*     | The deployed Google Apps Script Web App URL. Used to fetch live benefits data and accept contributions.                        |
 | `VITE_ENABLE_CONTRIBUTE`  | No       | Feature flag to show/hide the **Contribute** link in the navigation bar. Set to `true` to enable, `false` to disable. Defaults to `false`. |
+| `VITE_ENABLE_PERSONALIZE` | No       | Feature flag to show/hide the **Personalize** button. Set to `true` to enable, `false` to disable. Defaults to `true`. |
 
 > \* The app **will still run** without `APP_SCRIPT_URL` — it falls back to local `data.json` → `data.example.json`. However, contributions and live data sync will not work.
 
@@ -176,6 +177,7 @@ The app uses environment variables to connect to the Google Apps Script backend 
    ```env
    APP_SCRIPT_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
    VITE_ENABLE_CONTRIBUTE=true   # Set to false to hide the Contribute page from the nav
+   VITE_ENABLE_PERSONALIZE=true  # Set to false to hide the Personalize button
    ```
 
 3. Restart the dev server for the change to take effect.

@@ -5,6 +5,7 @@ import { usePreferences } from '../context/PreferencesContext';
 import './Navigation.css';
 
 const showContribute = import.meta.env.VITE_ENABLE_CONTRIBUTE === 'true';
+const showPersonalize = import.meta.env.VITE_ENABLE_PERSONALIZE !== 'false';
 
 const Navigation = () => {
   const location = useLocation();
@@ -48,10 +49,12 @@ const Navigation = () => {
             <Link to="/favorites" className="action-btn desktop-only" aria-label="Favorites">
               <Heart size={20} />
             </Link>
-            <button className="action-btn personalize-btn desktop-only" onClick={handleOpenOnboarding} aria-label="Personalize">
-              <User size={20} />
-              <span className="personalize-text" style={{ marginLeft: '6px', fontSize: '0.9rem', fontWeight: '500' }}>Personalize</span>
-            </button>
+            {showPersonalize && (
+              <button className="action-btn personalize-btn desktop-only" onClick={handleOpenOnboarding} aria-label="Personalize">
+                <User size={20} />
+                <span className="personalize-text" style={{ marginLeft: '6px', fontSize: '0.9rem', fontWeight: '500' }}>Personalize</span>
+              </button>
+            )}
             <button className="action-btn mobile-only" onClick={toggleMobileMenu} aria-label="Toggle Menu">
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -70,11 +73,13 @@ const Navigation = () => {
             <Heart size={18} /> Favorites
           </div>
         </Link>
-        <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => { handleOpenOnboarding(); toggleMobileMenu(); }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <User size={18} /> Personalize
+        {showPersonalize && (
+          <div className="nav-link" style={{ cursor: 'pointer' }} onClick={() => { handleOpenOnboarding(); toggleMobileMenu(); }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <User size={18} /> Personalize
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
