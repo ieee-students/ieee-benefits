@@ -1,0 +1,246 @@
+{
+  "AES010": {
+    "description": "AESS pioneers large-scale integrated interoperable systems and is the only professional Society dealing with total integrated electronic systems and the enabling technologies.",
+    "logo": "/logos/ieee-aerospace-and-electronic-systems-society-aess.jpg.jpeg"
+  },
+  "AP003": {
+    "description": "AP-S is dedicated to the advancement of electromagnetics frontiers. AP-S fosters antennas, propagation and electromagnetics theory, technology, applications, innovation, and excellence. AP-S is essential to the global electromagnetics community, and is universally recognized for contributions on antennas, propagation, electromagnetics and wireless technologies for the benefit of humanity.",
+    "logo": "/logos/ieee-antennas-propagation-society-aps.jpg.jpeg"
+  },
+  "BT002": {
+    "description": "BTS technologies deliver information and entertainment to audiences worldwide. Members access breakthrough research in the fields of broadcasting, including antennas, electronics, power, communications, signal processing, information theory, computers, and audio.",
+    "logo": "/logos/ieee-broadcast-technology-society-bts.jpg.jpeg"
+  },
+  "CAS004": {
+    "description": "CAS's unique and profound expertise in circuits, systems, signals, modeling, analysis, and design has a decisive impact on sustainable energy, bio-health, green information technology, nano-technology, and scalable information technology systems. Membership includes access to multiple periodicals, a free subscription to IEEE DataPort, networking opportunities, and reduced conference registration rates.",
+    "logo": "/logos/ieee-circuits-and-systems-society-cas.jpg.jpeg"
+  },
+  "COM019": {
+    "description": "ComSoc provides a premier international forum for professionals interested in advancing communications technologies including terminals, computers, systems, and operations; transmission media networks; new content/delivery methods; layout; protocol; and architecture.",
+    "logo": "/logos/ieee-communications-society-comsoc.jpg.jpeg"
+  },
+  "CIS011": {
+    "description": "CIS is a network of pioneers interested in nature-inspired problem-solving including neural networks, evolutionary algorithms, fuzzy systems, and hybrid intelligent systems. CIS researchers, professionals, and practitioners provide insight into the development of Big Data and the Internet of Things.",
+    "logo": "/logos/computational-intelligence-society-cis-new.jpg.jpeg"
+  },
+  "C016": {
+    "description": "The IEEE Computer Society is the world's leading organization for computing and IT professionals, delivering the computing community with relevant solutions and trusted resources. With a global network of 370k+ computing professionals, membership connects you with leadership development opportunities, learning courses, and nearly 1 million articles from peer-reviewed periodicals and conferences.",
+    "logo": "/logos/ieee-computer-society.jpg.jpeg"
+  },
+  "CT008": {
+    "description": "CTSoc is the premier technical organization in the Consumer Electronics industry, working to improve technologies, applications, standards, and products for consumers. It focuses on the design, testing, and use of mass-market devices, systems, software, AI, big data, and services for advanced consumer products.",
+    "logo": "/logos/ieee-consumer-technology-society-ctsoc.jpg.jpeg"
+  },
+  "CS023": {
+    "description": "CSS brings together global industry professionals and researchers interested in exploring how control systems contribute to the advancement of human lives.",
+    "logo": "/logos/ieee-control-systems-society-css.jpg.jpeg"
+  },
+  "DEI032": {
+    "description": "DEIS members strive to advance the theory and practice of dielectric phenomena and behavior, including the development and application of gaseous, liquid, and solid insulating materials in electrical and electronic equipment.",
+    "logo": "/logos/ieee-dielectrics-and-electrical-insulation-society-deis.jpg.jpeg"
+  },
+  "E025": {
+    "description": "EdSoc is an international organization that promotes, advances, and disseminates state-of-the-art scientific information and resources related to the Society's field of interest and provides professional development opportunities for academic and industry professionals.",
+    "logo": "/logos/ieee-education-society-edsoc.jpg.jpeg"
+  },
+  "EMC027": {
+    "description": "EMC is the world's largest organization dedicated to the development and distribution of information, tools, and techniques for reducing electromagnetic interference.",
+    "logo": "/logos/ieee-electromagnetic-compatibility-society-emc.jpg.jpeg"
+  },
+  "ED015": {
+    "description": "EDS promotes excellence in the field of electron devices by enhancing the quality of life for humanity through its members' contributions in R&D, manufacturing, and application of electronic and ionic devices.",
+    "logo": "/logos/ieee-electron-devices-society-eds.jpg.jpeg"
+  },
+  "EP021": {
+    "description": "EPS is the leading international forum for scientists and engineers engaged in the research, design, and development of revolutionary advances in microsystems packaging and manufacturing.",
+    "logo": "/logos/electronic-packaging-society-eps-new.jpg.jpeg"
+  },
+  "EMB018": {
+    "description": "EMBS is the world's largest international society of biomedical engineers who design the electrical circuits that make a pacemaker run, create the software that reads an MRI, and help develop the wireless technologies that allow patients and doctors to communicate over long distances.",
+    "logo": "/logos/ieee-embs-updated.jpg.jpeg"
+  },
+  "GRS029": {
+    "description": "GRSS members focus on the theory, concepts, and techniques of science and engineering as they apply to the remote sensing of the earth, oceans, atmosphere, and space as well as the interpretation and dissemination of this information.",
+    "logo": "/logos/ieee-geoscience-and-remote-sensing-society-grss.jpg.jpeg"
+  },
+  "IE013": {
+    "description": "IES members focus on the theory and application of electronics, controls, communications, instrumentation, and computational intelligence to industrial and manufacturing systems and processes.",
+    "logo": "/logos/ieee-industrial-electronics-society-ies.jpg.jpeg"
+  },
+  "IA034": {
+    "description": "IAS focuses on the unique needs of industry and commerce by keeping members up-to-date of current developments in the area of technology in electricity and electronics.",
+    "logo": "/logos/ieee-industry-society-wordmark.jpeg"
+  },
+  "IT012": {
+    "description": "ITS members are part of a community developing the mathematical underpinnings of information technology for the benefit of humanity. We focus on the processing, transmission, storage, and use of information, as well as the foundation of the communications process.",
+    "logo": "/logos/information-theory-society-its-new.jpg.jpeg"
+  },
+  "IM009": {
+    "description": "IMS is the premier international professional society in the instrumentation and measurement fields. Our focus is the development and use of electrical and electronic instruments and equipment to measure, monitor, and/or record physical phenomena.",
+    "logo": "/logos/ieee-instrumentation-and-measurement-society-ims.jpg.jpeg"
+  },
+  "ITSS038": {
+    "description": "ITSS members focus on the theoretical, experimental, and operational aspects of electrical and electronics engineering and information technologies as applied to intelligent transportation systems.",
+    "logo": "/logos/ieee-intelligent-transportation-systems-society-itss.jpg.jpeg"
+  },
+  "MAG033": {
+    "description": "The IEEE Magnetics Society is the leading international professional organization for magnetism and for related professionals throughout the world focusing on the fundamental development, design, and application of magnetic devices, including magnetic materials and phenomena.",
+    "logo": "/logos/ieee-magnetics-society.jpg.jpeg"
+  },
+  "MTT017": {
+    "description": "MTT-S is a welcoming, global community of scientists and engineers engaged in research and development of the RF, microwave, mm-wave and THz technologies. The Society's flagship conference, the International Microwave Symposium, is the world's leading event in the field. MTT-S has a strong volunteer ethos, and its Chapters offer excellent opportunities for personal career development, networking, as well as for acquiring new knowledge.",
+    "logo": "/logos/microwave-theory-technology-society-new.jpg.jpeg"
+  },
+  "NPS005": {
+    "description": "NPSS members are part of a global community dedicated to the advancement of Nuclear Science and Engineering and Plasma Science and Engineering.",
+    "logo": "/logos/nuclear-and-plasma-sciences-society-npss-new.jpg.jpeg"
+  },
+  "OE022": {
+    "description": "OES members are engaged in all aspects of science, engineering, and technology that address research, development, and operations pertaining to all bodies of water.",
+    "logo": "/logos/ieee-oceanic-engineering-society-oes.jpg.jpeg"
+  },
+  "PHO036": {
+    "description": "The Photonics Society is a global forum for students and professionals advancing light-based technologies, from lasers and integrated photonics to imaging, quantum optics, and optical networks. Acting as the conduit between academia, industry, and standards, we accelerate photonics breakthroughs worldwide.",
+    "logo": "/logos/ieee-photonics-society.jpg.jpeg"
+  },
+  "PEL035": {
+    "description": "PELS members focus on the effective use of electronic components, the application of circuit theory and design techniques, and the development of analytical tools toward efficient conversion, control, and condition of electric power.",
+    "logo": "/logos/ieee-power-electronics-society-pels.jpg.jpeg"
+  },
+  "PE031": {
+    "description": "PES is the world's largest forum for sharing the latest in technological developments in the electric power industry, for developing standards that guide the development and construction of equipment and systems, and for educating members of the industry and the general public.",
+    "logo": "/logos/power-and-energy-society-pes-new.jpg.jpeg"
+  },
+  "PSE043": {
+    "description": "PSES serves the product safety and regulatory profession and the public by fostering the development and facilitation of the exchange of knowledge in product safety and compliance engineering by promoting scientific, literary, educational, and professional opportunities.",
+    "logo": "/logos/ieee-product-safety-engineering-society-pses.jpg.jpeg"
+  },
+  "PC026": {
+    "description": "PCS is dedicated to understanding and promoting communication in engineering, scientific, and other technical environments.",
+    "logo": "/logos/ieee-professional-communication-society-pcs.jpg.jpeg"
+  },
+  "RL007": {
+    "description": "RS members are professionals engaged in assuring reliability in the engineering disciplines of hardware, software, and human factors.",
+    "logo": "/logos/reliability-societyjpg-new.jpg.jpeg"
+  },
+  "RA024": {
+    "description": "RAS members foster the development and facilitate the exchange of scientific and technological knowledge in robotics and automation that benefits the profession and humanity.",
+    "logo": "/logos/robotics-and-automation-society-ras-new.jpg.jpeg"
+  },
+  "SP001": {
+    "description": "SPS is a diverse global community of signal processing engineers, researchers, students, and industry professionals, spanning a wide range of disciplines, professions, and career stages.",
+    "logo": "/logos/ieee-signal-processing-society-sps.jpg.jpeg"
+  },
+  "SIT030": {
+    "description": "SSIT members focus on bringing together practicing technologists and researchers to facilitate understanding of the complex interactions between technology, science, and society, as well as its impact on individuals and society.",
+    "logo": "/logos/society-on-social-implications-of-technology-ssit-new.jpg.jpeg"
+  },
+  "SSC037": {
+    "description": "SSCS members focus on the design, implementation, and application of solid-state integrated circuits for all applications, including computers, communications, signal processing, and optoelectronics.",
+    "logo": "/logos/ieee-solid-state-circuits-society-sscs.jpg.jpeg"
+  },
+  "SMC028": {
+    "description": "SMC is the world's leading society for the advancement of theory and application in systems science and engineering, human-machine systems, and cybernetics.",
+    "logo": "/logos/systems-man-and-cybernetics-society-smc-new.jpg.jpeg"
+  },
+  "BIO046": {
+    "description": "The IEEE Biometrics Council advances, promotes, and coordinates work in the field of biometric technology including the theory, design, and application of biometrics based on physical and/or behavioral features and traits for identification, verification, encryption, recognition and medical diagnosis. The Council sponsors publications, conferences and events, and networking opportunities.",
+    "logo": "/logos/ieee-biometrics-council-new.jpg.jpeg"
+  },
+  "CEDA044": {
+    "description": "CEDA fosters design and automation of electronic and embedded systems at all levels with a field of interest that spans the theory, implementation, and use of EDA/CAD tools to design integrated electronic circuits and systems. The Council sponsors publications, conferences and events, and networking opportunities.",
+    "logo": "/logos/ieee-council-on-electronic-design-automation-ceda-new.jpg.jpeg"
+  },
+  "NANO042": {
+    "description": "The IEEE Nanotechnology Council supports the advancement and coordination of work in the field of Nanotechnology by supporting the theory, design, and development of nanotechnology and its scientific, engineering, and industrial applications. The Council sponsors publications, conferences, and events, and networking opportunities.",
+    "logo": "/logos/ieee-nanotechnology-council-new.jpg.jpeg"
+  },
+  "RFID741": {
+    "description": "The IEEE Council on RFID focuses on the theory and practice of matters relating to RFID (radio frequency identification) and RFID-related systems with a focus on radio frequency identification and the Internet of Things. The Council sponsors publications, conferences, and events, and networking opportunities.",
+    "logo": "/logos/ieee-council-on-rfid-new.jpg.jpeg"
+  },
+  "SEN039": {
+    "description": "The IEEE Sensors Council serves its 26 IEEE member societies in the multi-disciplinary technical area of Sensors, covering all aspects of sensors and sensing systems, from design to fabrication and applications in IoT. The Council sponsors publications, conferences and events, and networking opportunities.",
+    "logo": "/logos/ieee-sensors-counci-new.jpg.jpeg"
+  },
+  "CSC041": {
+    "description": "The IEEE Council on Superconductivity promotes the science and technology of superconductors and their applications, including the development and enhancement of the associated materials. The Council sponsors publications, conferences and events, and networking opportunities.",
+    "logo": "/logos/ieee-council-on-superconductivity-new.jpg.jpeg"
+  },
+  "SYS045": {
+    "description": "The IEEE Systems Council promotes activities around systems engineering including systems modeling, simulation, integration as well as robust design, safety and human factors and product transition. The Council sponsors publications, conferences and events, and networking opportunities.",
+    "logo": "/logos/ieee-systems-council-new.jpg.jpeg"
+  },
+  "TEC802": {
+    "description": "The IEEE Transportation Electrification Council's field of interest the design, integration, manufacturing, standards, life cycle, and operation of electrified vehicles, machines, systems, related infrastructure, and interaction with energy systems. The field of interest spans all modes of transportation (on road, off road, rail, air, water, and others) of people and goods as well as the technologies, systems, and networks needed for the electrification of transportation.",
+    "logo": "/logos/ieee-tec-new.jpg.jpeg"
+  },
+  "R1": {
+    "description": "IEEE Region 1 covers the Northeastern United States, including New England and parts of New York. It supports local Sections, Chapters, and Student Branches in advancing technology and professional development.",
+    "logo": "/logos/region-1_350x197.png"
+  },
+  "R2": {
+    "description": "IEEE Region 2 serves the Eastern United States, spanning the Mid-Atlantic states. It fosters professional networking, technical activities, and community engagement across its member Sections.",
+    "logo": "/logos/region-2_350x197.png"
+  },
+  "R3": {
+    "description": "IEEE Region 3 represents the Southeastern United States, supporting members across the Southeast with technical conferences, professional development, and student initiatives.",
+    "logo": "/logos/region-3_350x197.png"
+  },
+  "R4": {
+    "description": "IEEE Region 4 covers the Central United States, serving members in the Midwest with opportunities for technical exchange, leadership development, and community outreach.",
+    "logo": "/logos/region-4_350x197.png"
+  },
+  "R5": {
+    "description": "IEEE Region 5 represents the Southwestern United States, providing members with access to technical resources, conferences, and professional growth opportunities.",
+    "logo": "/logos/region-5_350x197.png"
+  },
+  "R6": {
+    "description": "IEEE Region 6 covers the Western United States, including the Pacific Coast. It is one of the largest IEEE Regions, supporting a vibrant community of engineers and technologists.",
+    "logo": "/logos/region-6_350x197.png"
+  },
+  "R7": {
+    "description": "IEEE Region 7 serves all of Canada, connecting members across the country through Sections, Chapters, and Student Branches dedicated to advancing technology for the benefit of humanity.",
+    "logo": "/logos/region-7_350x197.png"
+  },
+  "R8": {
+    "description": "IEEE Region 8 is the largest IEEE Region geographically, covering Europe, the Middle East, and Africa. It supports a diverse membership with technical activities, conferences, and humanitarian initiatives.",
+    "logo": "/logos/region-8_350x197.png"
+  },
+  "R9": {
+    "description": "IEEE Region 9 serves Latin America, including Central America, South America, and the Caribbean. It promotes engineering education, student activities, and professional development across the region.",
+    "logo": "/logos/region-9_350x197.png"
+  },
+  "R0": {
+    "description": "IEEE Region 10 covers Asia and the Pacific, the fastest-growing IEEE Region. It supports a large and dynamic community of members across diverse countries and cultures in the Asia-Pacific area.",
+    "logo": "/logos/region-10_350x197.png"
+  },
+  "CMA7400": {
+    "description": "The MGA Student Activities Committee (SAC) supports IEEE Student Branches and student members worldwide. SAC promotes programs, competitions, and activities designed to enhance the educational and professional development of student members across the globe.",
+    "logo": "/logos/CMA7400.png"
+  },
+  "CMA9100": {
+    "description": "IEEE Young Professionals (YP) is an international community of enthusiastic, dynamic, and innovative members and volunteers. Members of this community are engineers and scientists between the ages of 18–40 who are dedicated to furthering their professional development and career advancement.",
+    "logo": "/logos/IEEE-Young-Professionals-Logo-300x179.jpg"
+  },
+  "CMC4000": {
+    "description": "IEEE Women in Engineering (WIE) is one of the largest international professional organizations dedicated to promoting women engineers and scientists, and inspiring girls around the world to follow their academic interests in a career in engineering and science.",
+    "logo": "/logos/WIE_purple_pms526.png"
+  },
+  "CMC1200": {
+    "description": "The IEEE Life Members Committee serves the needs and interests of IEEE Life Members—those who have accumulated the required number of years of membership and age. The committee promotes programs and activities that recognize and engage this experienced community of engineers and scientists.",
+    "logo": "/logos/ieee_life_members-logo-x2.webp"
+  },
+  "TEM014": {
+    "description": "TEMS encompasses the management sciences and practices required for defining, implementing, and operating engineering and technology initiatives.",
+    "logo": "/logos/technology-and-engineering-management-society-temsjpg-updated.jpg.jpeg"
+  },
+  "UFFC020": {
+    "description": "UFFC deals with the theory, technology, materials, and applications relating to the generation, transmission, and detection of ultrasonic waves and related phenomena.",
+    "logo": "/logos/ultrasonics-ferroelectrics-and-frequency-control-society-new.jpg.jpeg"
+  },
+  "VT006": {
+    "description": "VTS concerns the theory and practice of electrical and electronics engineering in the vehicular and automotive industries, including land, airborne, and maritime environments.",
+    "logo": "/logos/vehicular-technology-society-vts-new.jpg.jpeg"
+  }
+}

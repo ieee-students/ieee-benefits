@@ -1,14 +1,26 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useFavorites } from '../context/FavoritesContext';
 import { useBenefits } from '../hooks/useBenefits';
 import BenefitCard from '../components/BenefitCard';
 import { Link } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
+import { fetchOUs, fetchSpoInfo } from '../services/api';
 import './Explore.css'; // Reusing grid styles
 
 const Favorites = () => {
   const { favorites } = useFavorites();
   const { benefits, loading } = useBenefits();
+  const [spoInfo, setSpoInfo] = useState({});
+  const [spoNameToId, setSpoNameToId] = useState({});
+
+  useEffect(() => {
+    fetchSpoInfo().then(setSpoInfo);
+    fetchOUs().then(spos => {
+      const map = {};
+      spos.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
+      setSpoNameToId(map);
+    });
+  }, []);
 
   const favoriteBenefits = useMemo(() => {
     return benefits.filter(b => favorites.includes(b.id));
@@ -29,7 +41,7 @@ const Favorites = () => {
           </div>
         ) : favoriteBenefits.length > 0 ? (
           favoriteBenefits.map(benefit => (
-            <BenefitCard key={benefit.id} benefit={benefit} />
+            <BenefitCard key={benefit.id} benefit={benefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
           ))
         ) : (
           <div className="empty-state glass-panel">

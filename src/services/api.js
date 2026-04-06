@@ -70,6 +70,23 @@ export const fetchCategories = async () => {
   }
 };
 
+let _spoInfoCache = null;
+
+export const fetchSpoInfo = async () => {
+  if (_spoInfoCache) return _spoInfoCache;
+  try {
+    const response = await fetch('/spoinfo.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    _spoInfoCache = await response.json();
+    return _spoInfoCache;
+  } catch (error) {
+    console.error("Failed to fetch SpoInfo:", error);
+    return {};
+  }
+};
+
 export const submitContribution = async (payload) => {
   const url = import.meta.env.VITE_APP_SCRIPT_URL || import.meta.env.APP_SCRIPT_URL;
   if (!url) {

@@ -77,6 +77,12 @@
   display: none;
 }
 
+.filter-label-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .checkmark {
   width: 18px;
   height: 18px;

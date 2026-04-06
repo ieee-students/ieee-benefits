@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Heart, Calendar, ArrowUpRight } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
+import OrgLogo from './OrgLogo';
 import './BenefitCard.css';
 
-const BenefitCard = ({ benefit }) => {
+const BenefitCard = ({ benefit, spoInfo, spoNameToId }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorite = isFavorite(benefit.id);
@@ -28,6 +29,8 @@ const BenefitCard = ({ benefit }) => {
     return `On ${date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}`;
   };
 
+  const spoId = spoNameToId?.[benefit.spoName] || null;
+
   return (
     <div className={`benefit-card glass-panel clickable ${isExpanded ? 'expanded' : ''}`} onClick={handleCardClick}>
       <div className="card-header">
@@ -49,10 +52,15 @@ const BenefitCard = ({ benefit }) => {
         <p className={`card-desc ${isExpanded ? 'expanded' : ''}`}>{benefit.description}</p>
 
         <div className="card-meta">
-          <div className="meta-item">
+          <div className="meta-info">
             <span className="meta-label">Organization Unit</span>
             <span className="meta-value">{benefit.spoName}</span>
           </div>
+          {spoInfo && (
+            <div className="meta-logo">
+              <OrgLogo spoId={spoId} spoName={benefit.spoName} spoInfo={spoInfo} variant="banner" />
+            </div>
+          )}
         </div>
       </div>
 

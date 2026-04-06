@@ -4,6 +4,7 @@ import FilterSidebar from '../components/FilterSidebar';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
+import { fetchOUs, fetchSpoInfo } from '../services/api';
 import { Loader2 } from 'lucide-react';
 import './Explore.css';
 
@@ -11,11 +12,22 @@ const Explore = () => {
   const { benefits, loading } = useBenefits();
   const { preferences } = usePreferences();
   const [searchParams] = useSearchParams();
+  const [spoInfo, setSpoInfo] = useState({});
+  const [spoNameToId, setSpoNameToId] = useState({});
 
   const [filters, setFilters] = useState({
     types: [],
     sponsors: []
   });
+
+  useEffect(() => {
+    fetchSpoInfo().then(setSpoInfo);
+    fetchOUs().then(spos => {
+      const map = {};
+      spos.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
+      setSpoNameToId(map);
+    });
+  }, []);
 
   // Initialize filters from URL or "forYou" flag
   useEffect(() => {
@@ -64,7 +76,7 @@ const Explore = () => {
     <div className="explore-page">
       <div className="explore-layout">
         <div className="sidebar-container">
-          <FilterSidebar filters={filters} setFilters={setFilters} />
+          <FilterSidebar filters={filters} setFilters={setFilters} spoInfo={spoInfo} />
         </div>
         
         <div className="content-container">
@@ -81,7 +93,7 @@ const Explore = () => {
               </div>
             ) : filteredBenefits.length > 0 ? (
               filteredBenefits.map(benefit => (
-                <BenefitCard key={benefit.id} benefit={benefit} />
+                <BenefitCard key={benefit.id} benefit={benefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
               ))
             ) : (
               <div className="empty-state">

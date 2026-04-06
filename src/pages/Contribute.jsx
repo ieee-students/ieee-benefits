@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Pencil, Loader2 } from 'lucide-react';
-import { fetchOUs, fetchCategories, submitContribution } from '../services/api';
+import { fetchOUs, fetchCategories, fetchSpoInfo, submitContribution } from '../services/api';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../context/BenefitsContext';
 import './Contribute.css';
@@ -11,6 +11,8 @@ const Contribute = () => {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState(null);
+  const [spoInfo, setSpoInfo] = useState({});
+  const [spoNameToId, setSpoNameToId] = useState({});
   const { benefits } = useBenefits();
 
   const [formData, setFormData] = useState({
@@ -29,9 +31,15 @@ const Contribute = () => {
   });
 
   useEffect(() => {
-    Promise.all([fetchOUs(), fetchCategories()]).then(([sposData, categoriesData]) => {
+    Promise.all([fetchOUs(), fetchCategories(), fetchSpoInfo()]).then(([sposData, categoriesData, spoInfoData]) => {
       setSpos(sposData);
       setCategories(categoriesData);
+      setSpoInfo(spoInfoData);
+      
+      const map = {};
+      sposData.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
+      setSpoNameToId(map);
+      
       setLoading(false);
     });
   }, []);
@@ -161,7 +169,7 @@ const Contribute = () => {
               This is how your contribution will appear on the platform once verified and approved.
             </p>
             <div className="preview-container">
-              <BenefitCard benefit={previewBenefit} />
+              <BenefitCard benefit={previewBenefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
             </div>
 
             {formData.spoName && (

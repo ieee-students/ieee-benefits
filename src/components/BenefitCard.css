@@ -98,12 +98,17 @@
   border-radius: var(--radius-md);
   padding: 0.75rem;
   margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
-.meta-item {
+.meta-info {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  flex: 1;
 }
 
 .meta-label {
@@ -116,6 +121,17 @@
 .meta-value {
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.meta-logo {
+  width: 90px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.meta-logo img {
+  padding: 0.35rem !important;
 }
 
 .card-footer {

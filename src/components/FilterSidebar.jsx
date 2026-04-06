@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { fetchOUs, fetchCategories } from '../services/api';
+import { fetchOUs, fetchCategories, fetchSpoInfo } from '../services/api';
 import './FilterSidebar.css';
 
-const FilterSidebar = ({ filters, setFilters }) => {
+const FilterSidebar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
   const [spos, setSpos] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [localSpoInfo, setLocalSpoInfo] = useState({});
   const [mobileExpanded, setMobileExpanded] = useState(false);
+
+  const spoInfo = externalSpoInfo || localSpoInfo;
 
   useEffect(() => {
     fetchOUs().then(setSpos);
     fetchCategories().then(setCategories);
-  }, []);
+    if (!externalSpoInfo) {
+      fetchSpoInfo().then(setLocalSpoInfo);
+    }
+  }, [externalSpoInfo]);
 
   const toggleFilter = (category, value) => {
     setFilters(prev => {
@@ -28,6 +34,18 @@ const FilterSidebar = ({ filters, setFilters }) => {
 
   // Count active filters for the badge
   const activeFilterCount = (filters.types?.length || 0) + (filters.sponsors?.length || 0);
+
+  const renderSpoLabel = (spo) => (
+    <label key={spo.hiddenSpoId} className="filter-label">
+      <input
+        type="checkbox"
+        checked={filters.sponsors?.includes(spo.spoName) || false}
+        onChange={() => toggleFilter('sponsors', spo.spoName)}
+      />
+      <span className="checkmark"></span>
+      {spo.spoName}
+    </label>
+  );
 
   return (
     <aside className={`filter-sidebar glass-panel ${mobileExpanded ? 'mobile-expanded' : ''}`}>
@@ -85,43 +103,13 @@ const FilterSidebar = ({ filters, setFilters }) => {
           <h4>Organization Units</h4>
           
           <h5 className="filter-subheading">IEEE Committees</h5>
-          {spos.filter(s => s.spoAcctClass === 'Organizational SPO').map(spo => (
-            <label key={spo.hiddenSpoId} className="filter-label">
-              <input
-                type="checkbox"
-                checked={filters.sponsors?.includes(spo.spoName) || false}
-                onChange={() => toggleFilter('sponsors', spo.spoName)}
-              />
-              <span className="checkmark"></span>
-              {spo.spoName}
-            </label>
-          ))}
+          {spos.filter(s => s.spoAcctClass === 'Organizational SPO').map(renderSpoLabel)}
 
           <h5 className="filter-subheading">IEEE Societies & Technical Councils</h5>
-          {spos.filter(s => s.spoAcctClass === 'Technical SPO').map(spo => (
-            <label key={spo.hiddenSpoId} className="filter-label">
-              <input
-                type="checkbox"
-                checked={filters.sponsors?.includes(spo.spoName) || false}
-                onChange={() => toggleFilter('sponsors', spo.spoName)}
-              />
-              <span className="checkmark"></span>
-              {spo.spoName}
-            </label>
-          ))}
+          {spos.filter(s => s.spoAcctClass === 'Technical SPO').map(renderSpoLabel)}
 
           <h5 className="filter-subheading">IEEE Geographic Units</h5>
-          {spos.filter(s => s.spoAcctClass === 'Geographic SPO').map(spo => (
-            <label key={spo.hiddenSpoId} className="filter-label">
-              <input
-                type="checkbox"
-                checked={filters.sponsors?.includes(spo.spoName) || false}
-                onChange={() => toggleFilter('sponsors', spo.spoName)}
-              />
-              <span className="checkmark"></span>
-              {spo.spoName}
-            </label>
-          ))}
+          {spos.filter(s => s.spoAcctClass === 'Geographic SPO').map(renderSpoLabel)}
         </div>
       </div>
     </aside>

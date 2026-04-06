@@ -1,0 +1,63 @@
+/* ── OrgLogo ─────────────────────────────────── */
+.org-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.org-logo:hover {
+  transform: scale(1.08);
+}
+
+/* Image variant */
+.org-logo--img {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px;
+}
+
+.org-logo--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Initials variant */
+.org-logo--initials {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Light theme adjustments */
+.theme-light .org-logo--img {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.theme-light .org-logo--initials {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Banner variant */
+.org-logo--banner {
+  width: 100%;
+  aspect-ratio: 637 / 359;
+}
+
+.org-logo--img.org-logo--banner {
+  background: #ffffff !important;
+}
+
+.org-logo--banner img {
+  border-radius: 0;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}

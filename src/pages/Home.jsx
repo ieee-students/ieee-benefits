@@ -7,7 +7,8 @@ import {
 } from 'lucide-react';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
-import { fetchOUs, fetchCategories } from '../services/api';
+import { fetchOUs, fetchCategories, fetchSpoInfo } from '../services/api';
+import OrgLogo from '../components/OrgLogo';
 import './Home.css';
 
 const iconMap = {
@@ -22,6 +23,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [spos, setSpos] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [spoInfo, setSpoInfo] = useState({});
   const [showAllSocieties, setShowAllSocieties] = useState(false);
   const [societyGridCols, setSocietyGridCols] = useState(6);
   const societyGridRef = useRef(null);
@@ -42,6 +44,7 @@ const Home = () => {
   useEffect(() => {
     fetchOUs().then(setSpos);
     fetchCategories().then(setCategories);
+    fetchSpoInfo().then(setSpoInfo);
   }, []);
 
   const exploreCategory = (filterType, filterValue) => {
@@ -148,8 +151,15 @@ const Home = () => {
             let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
             return (
               <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
-                <h4>{spo.spoName}</h4>
-                <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
+                <div className="spo-card-header">
+                  <OrgLogo spoId={spo.hiddenSpoId} spoName={spo.spoName} spoInfo={spoInfo} variant="banner" />
+                </div>
+                <div className="spo-card-content">
+                  <h4 className="spo-card-title">{spo.spoName}</h4>
+                  <span className="spo-count">
+                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                  </span>
+                </div>
               </div>
             );
           })}
@@ -184,8 +194,15 @@ const Home = () => {
                 let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
                 return (
                   <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
-                    <h4>{spo.spoName}</h4>
-                    <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
+                    <div className="spo-card-header">
+                      <OrgLogo spoId={spo.hiddenSpoId} spoName={spo.spoName} spoInfo={spoInfo} variant="banner" />
+                    </div>
+                    <div className="spo-card-content">
+                      <h4 className="spo-card-title">{spo.spoName}</h4>
+                      <span className="spo-count">
+                        {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                      </span>
+                    </div>
                   </div>
                 );
               })}
@@ -217,8 +234,15 @@ const Home = () => {
             let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
             return (
               <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
-                <h4>{spo.spoName}</h4>
-                <span className="count-text">{loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : `${totalCount} available`}</span>
+                <div className="spo-card-header">
+                  <OrgLogo spoId={spo.hiddenSpoId} spoName={spo.spoName} spoInfo={spoInfo} variant="banner" />
+                </div>
+                <div className="spo-card-content">
+                  <h4 className="spo-card-title">{spo.spoName}</h4>
+                  <span className="spo-count">
+                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : 'Coming Soon'}
+                  </span>
+                </div>
               </div>
             );
           })}
