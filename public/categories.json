@@ -2,7 +2,7 @@
   {
     "title": "Competitions",
     "icon": "Trophy",
-    "description": "Engage in contests and challenges to test your skills.",
+    "description": "Showcase your talent and test your skills by participating in global challenges.",
     "linkedPage": null,
     "disabled": false,
     "color": "#2563eb",
@@ -11,7 +11,7 @@
   {
     "title": "Awards",
     "icon": "Award",
-    "description": "Recognize outstanding contributions and achievements.",
+    "description": "Gain prestigious recognition for your outstanding contributions and achievements.",
     "linkedPage": null,
     "disabled": false,
     "color": "#facc15",
@@ -20,7 +20,7 @@
   {
     "title": "Funding",
     "icon": "BadgeDollarSign",
-    "description": "Find funding for your next project.",
+    "description": "Secure essential financial support to bring your next big project to life.",
     "linkedPage": null,
     "disabled": false,
     "color": "#16a34a",
@@ -29,7 +29,7 @@
   {
     "title": "Programs",
     "icon": "GraduationCap",
-    "description": "Long-term learning and development initiatives.",
+    "description": "Advance your skills and career through long-term learning and developmental initiatives.",
     "linkedPage": null,
     "disabled": false,
     "color": "#4f46e5",
@@ -38,7 +38,7 @@
   {
     "title": "Flagship Events",
     "icon": "Landmark",
-    "description": "Primary regional gatherings, congresses, and long-term development initiatives.",
+    "description": "Build your network and knowledge by attending premier regional gatherings and congresses.",
     "linkedPage": null,
     "disabled": false,
     "color": "#e11d48",
@@ -47,7 +47,7 @@
   {
     "title": "ChallengeSphere Templates",
     "icon": "Layers",
-    "description": "Sample competition models created from successful past events, allowing others to easily replicate them.",
+    "description": "Save time and effort by accessing proven templates to confidently replicate successful past competitions.",
     "linkedPage": null,
     "disabled": false,
     "color": "#0891b2",
@@ -56,7 +56,7 @@
   {
     "title": "Fellowships",
     "icon": "Star",
-    "description": "Prestigious academic and research fellowships.",
+    "description": "Elevate your academic and research endeavors with support from exclusive fellowships.",
     "linkedPage": null,
     "disabled": true,
     "color": "#9333ea",
@@ -65,7 +65,7 @@
   {
     "title": "Travel Grants",
     "icon": "Map",
-    "description": "Financial support to attend global conferences.",
+    "description": "Receive financial assistance to attend global conferences and expand your professional network.",
     "linkedPage": null,
     "disabled": true,
     "color": "#ea580c",
@@ -74,7 +74,7 @@
   {
     "title": "Mentorship",
     "icon": "Users",
-    "description": "Connect with experienced professionals for guidance.",
+    "description": "Accelerate your personal growth through personalized guidance from experienced professionals.",
     "linkedPage": null,
     "disabled": true,
     "color": "#0d9488",
@@ -83,7 +83,7 @@
   {
     "title": "Other",
     "icon": "HelpCircle",
-    "description": "Miscellaneous opportunities such as papers, webinars, etc.",
+    "description": "Explore a variety of additional opportunities and resources to support your professional journey.",
     "linkedPage": null,
     "disabled": false,
     "color": "#475569",
