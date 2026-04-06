@@ -143,6 +143,18 @@
     "description": "SMC is the world's leading society for the advancement of theory and application in systems science and engineering, human-machine systems, and cybernetics.",
     "logo": "/logos/systems-man-and-cybernetics-society-smc-new.jpg.jpeg"
   },
+  "TEM014": {
+    "description": "TEMS encompasses the management sciences and practices required for defining, implementing, and operating engineering and technology initiatives.",
+    "logo": "/logos/technology-and-engineering-management-society-temsjpg-updated.jpg.jpeg"
+  },
+  "UFFC020": {
+    "description": "UFFC deals with the theory, technology, materials, and applications relating to the generation, transmission, and detection of ultrasonic waves and related phenomena.",
+    "logo": "/logos/ultrasonics-ferroelectrics-and-frequency-control-society-new.jpg.jpeg"
+  },
+  "VT006": {
+    "description": "VTS concerns the theory and practice of electrical and electronics engineering in the vehicular and automotive industries, including land, airborne, and maritime environments.",
+    "logo": "/logos/vehicular-technology-society-vts-new.jpg.jpeg"
+  },
   "BIO046": {
     "description": "The IEEE Biometrics Council advances, promotes, and coordinates work in the field of biometric technology including the theory, design, and application of biometrics based on physical and/or behavioral features and traits for identification, verification, encryption, recognition and medical diagnosis. The Council sponsors publications, conferences and events, and networking opportunities.",
     "logo": "/logos/ieee-biometrics-council-new.jpg.jpeg"
@@ -231,16 +243,12 @@
     "description": "The IEEE Life Members Committee serves the needs and interests of IEEE Life Members—those who have accumulated the required number of years of membership and age. The committee promotes programs and activities that recognize and engage this experienced community of engineers and scientists.",
     "logo": "/logos/ieee_life_members-logo-x2.webp"
   },
-  "TEM014": {
-    "description": "TEMS encompasses the management sciences and practices required for defining, implementing, and operating engineering and technology initiatives.",
-    "logo": "/logos/technology-and-engineering-management-society-temsjpg-updated.jpg.jpeg"
+  "CMA6500": {
+    "description": "The MGA Awards and Recognition Committee oversees the administration of MGA awards and recognitions, honoring those who have made outstanding contributions to IEEE.",
+    "icon": "Trophy"
   },
-  "UFFC020": {
-    "description": "UFFC deals with the theory, technology, materials, and applications relating to the generation, transmission, and detection of ultrasonic waves and related phenomena.",
-    "logo": "/logos/ultrasonics-ferroelectrics-and-frequency-control-society-new.jpg.jpeg"
-  },
-  "VT006": {
-    "description": "VTS concerns the theory and practice of electrical and electronics engineering in the vehicular and automotive industries, including land, airborne, and maritime environments.",
-    "logo": "/logos/vehicular-technology-society-vts-new.jpg.jpeg"
+  "CMA9200": {
+    "description": "The MGA Training Committee is responsible for developing, maintaining, and delivering high quality training programs for IEEE volunteers.",
+    "icon": "GraduationCap"
   }
 }

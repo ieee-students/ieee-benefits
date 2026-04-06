@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { Trophy, GraduationCap, Landmark } from 'lucide-react';
 import './OrgLogo.css';
 
-
-
-
+const IconMap = {
+  Trophy,
+  GraduationCap,
+  Landmark
+};
 
 const OrgLogo = ({ spoId, spoName, spoInfo, size = 28, variant = 'square', className = '' }) => {
   const [imgError, setImgError] = useState(false);
   const info = spoInfo?.[spoId];
   const logoUrl = info?.logo;
+  const iconStr = info?.icon;
   const showImg = logoUrl && !imgError;
 
   const containerStyle = variant === 'square' ? {
@@ -35,16 +39,18 @@ const OrgLogo = ({ spoId, spoName, spoInfo, size = 28, variant = 'square', class
     );
   }
 
-  // Fallback: empty white block (initials removed as they can be confusing)
-  const bg = '#ffffff';
+  // Fallback: Read icon from spoinfo or default to Landmark
+  const FallbackIcon = (iconStr && IconMap[iconStr]) ? IconMap[iconStr] : Landmark;
 
   return (
     <div
-      className={`org-logo org-logo--initials org-logo--${variant} ${className}`}
-      style={{ ...containerStyle, backgroundColor: bg }}
+      className={`org-logo org-logo--fallback org-logo--${variant} ${className}`}
+      style={containerStyle}
       title={spoName}
     >
-      {/* Intentionally left empty as abbreviations can be confusing */}
+      <div className="org-logo-icon-container">
+        <FallbackIcon className="fallback-icon" size={variant === 'banner' ? 48 : size * 0.55} strokeWidth={1.5} />
+      </div>
     </div>
   );
 };
