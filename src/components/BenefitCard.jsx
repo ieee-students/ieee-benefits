@@ -20,16 +20,32 @@ const BenefitCard = ({ benefit, spoInfo, spoNameToId }) => {
   const formatDeadline = (dateString) => {
     if (!dateString) return null;
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
     return `Apply before ${date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}`;
   };
 
   const formatEventDate = (dateString) => {
     if (!dateString) return null;
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
     return `On ${date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}`;
   };
 
+  const isPastDate = (dateString) => {
+    if (!dateString) return false;
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return false;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    date.setHours(0, 0, 0, 0);
+    return date < today;
+  };
+
   const spoId = spoNameToId?.[benefit.spoName] || null;
+
+  const dateToCompare = benefit.deadline || benefit.date;
+  const isPassed = isPastDate(dateToCompare);
+  const showAwaitingStatus = isPassed && benefit.annual === true;
 
   return (
     <div className={`benefit-card glass-panel clickable ${isExpanded ? 'expanded' : ''}`} onClick={handleCardClick}>
@@ -68,9 +84,10 @@ const BenefitCard = ({ benefit, spoInfo, spoNameToId }) => {
         {(benefit.date || benefit.deadline) ? (
           <div className="deadline">
             <Calendar size={16} />
-            <div className="deadline-lines">
+            <div className={`deadline-lines ${showAwaitingStatus ? 'dimmed-date' : ''}`}>
               {benefit.date && <span>{formatEventDate(benefit.date)}</span>}
               {benefit.deadline && <span>{formatDeadline(benefit.deadline)}</span>}
+              {showAwaitingStatus && <span className="awaiting-dates">(Awaiting new dates)</span>}
             </div>
           </div>
         ) : (

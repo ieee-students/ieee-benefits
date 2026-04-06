@@ -158,6 +158,17 @@
   flex-direction: column;
 }
 
+.deadline-lines.dimmed-date span:not(.awaiting-dates) {
+  opacity: 0.6;
+}
+
+.awaiting-dates {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
 .btn-sm {
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
