@@ -4,7 +4,6 @@
     "icon": "Trophy",
     "description": "Showcase your talent and test your skills by participating in global challenges.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#2563eb",
     "textColor": "#ffffff"
   },
@@ -13,7 +12,6 @@
     "icon": "Award",
     "description": "Gain prestigious recognition for your outstanding contributions and achievements.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#facc15",
     "textColor": "#422006"
   },
@@ -22,7 +20,6 @@
     "icon": "BadgeDollarSign",
     "description": "Secure essential financial support to bring your next big project to life.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#16a34a",
     "textColor": "#ffffff"
   },
@@ -31,7 +28,6 @@
     "icon": "GraduationCap",
     "description": "Advance your skills and career through long-term learning and developmental initiatives.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#4f46e5",
     "textColor": "#ffffff"
   },
@@ -40,7 +36,6 @@
     "icon": "Landmark",
     "description": "Build your network and knowledge by attending premier regional gatherings and congresses.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#e11d48",
     "textColor": "#ffffff"
   },
@@ -49,7 +44,6 @@
     "icon": "Layers",
     "description": "Save time and effort by accessing proven templates to confidently replicate successful past competitions.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#0891b2",
     "textColor": "#ffffff"
   },
@@ -58,7 +52,6 @@
     "icon": "Star",
     "description": "Elevate your academic and research endeavors with support from exclusive fellowships.",
     "linkedPage": null,
-    "disabled": true,
     "color": "#9333ea",
     "textColor": "#ffffff"
   },
@@ -67,7 +60,6 @@
     "icon": "Map",
     "description": "Receive financial assistance to attend global conferences and expand your professional network.",
     "linkedPage": null,
-    "disabled": true,
     "color": "#ea580c",
     "textColor": "#ffffff"
   },
@@ -76,7 +68,6 @@
     "icon": "Users",
     "description": "Accelerate your personal growth through personalized guidance from experienced professionals.",
     "linkedPage": null,
-    "disabled": true,
     "color": "#0d9488",
     "textColor": "#ffffff"
   },
@@ -85,7 +76,6 @@
     "icon": "HelpCircle",
     "description": "Explore a variety of additional opportunities and resources to support your professional journey.",
     "linkedPage": null,
-    "disabled": false,
     "color": "#475569",
     "textColor": "#ffffff"
   }

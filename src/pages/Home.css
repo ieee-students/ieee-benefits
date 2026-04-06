@@ -250,8 +250,9 @@
 }
 
 .show-all-card:hover h4,
-.show-all-card:hover .count-text {
-  color: #fff;
+.show-all-card:hover .count-text,
+.show-all-card:hover .show-all-icon {
+  color: #fff !important;
 }
 
 .loading-state {

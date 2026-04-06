@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import {
   Sparkles, Map, Users, Target, Landmark, Layers,
   Trophy, BadgeDollarSign, Code, GraduationCap, Wrench, Video, FileText,
-  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle, Loader2, Lock
+  Book, User, Star, Briefcase, Lightbulb, Award, HelpCircle, Loader2, Lock,
+  ChevronDown, ChevronUp
 } from 'lucide-react';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
@@ -106,7 +107,7 @@ const Home = () => {
           {categories.map((cat) => {
             const Icon = iconMap[cat.icon] || HelpCircle;
             const count = dashboardData.typesCount[cat.title] || 0;
-            const isDisabled = cat.disabled || (!loading && count === 0);
+            const isDisabled = !loading && count === 0;
 
             return (
               <div
@@ -165,6 +166,22 @@ const Home = () => {
               </div>
             );
           })}
+
+          <div className="category-card small-card glass-panel">
+            <div className="spo-card-header">
+              <div className="org-logo org-logo--fallback org-logo--banner">
+                <div className="org-logo-icon-container">
+                  <Layers className="fallback-icon" size={48} strokeWidth={1.5} />
+                </div>
+              </div>
+            </div>
+            <div className="spo-card-content">
+              <h4 className="spo-card-title">Expanding to more committees</h4>
+              <span className="spo-count">
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>
+              </span>
+            </div>
+          </div>
         </div>
 
         <h3 className="subsection-title">IEEE Societies & Technical Councils</h3>
@@ -213,6 +230,7 @@ const Home = () => {
                   className="category-card small-card glass-panel clickable show-all-card"
                   onClick={() => setShowAllSocieties(true)}
                 >
+                  <ChevronDown size={32} className="show-all-icon" style={{ color: 'var(--primary)', marginBottom: '0.5rem' }} />
                   <h4>Show All</h4>
                   <span className="count-text">{allSocieties.filter(s => !s.spoName.includes('Council')).length} societies & {allSocieties.filter(s => s.spoName.includes('Council')).length} councils</span>
                 </div>
@@ -223,7 +241,8 @@ const Home = () => {
                   onClick={() => setShowAllSocieties(false)}
                   style={{ gridColumn: '1 / -1', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', gap: 'var(--space-sm)' }}
                 >
-                  <span className="count-text">Show Less</span>
+                  <ChevronUp size={24} className="show-all-icon" style={{ color: 'var(--primary)' }} />
+                  <span className="count-text" style={{ fontSize: '1rem', fontWeight: 'bold' }}>Show Less</span>
                 </div>
               )}
             </div>

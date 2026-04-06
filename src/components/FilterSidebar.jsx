@@ -86,7 +86,7 @@ const FilterSidebar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
 
         <div className="filter-group">
           <h4>Category</h4>
-          {categories.filter(c => !c.disabled).map(cat => (
+          {categories.map(cat => (
             <label key={cat.title} className="filter-label">
               <input
                 type="checkbox"
