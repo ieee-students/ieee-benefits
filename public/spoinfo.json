@@ -250,5 +250,13 @@
   "CMA9200": {
     "description": "The MGA Training Committee is responsible for developing, maintaining, and delivering high quality training programs for IEEE volunteers.",
     "icon": "GraduationCap"
+  },
+  "CMTAB409": {
+    "description": "The IEEE Entrepreneurship Steering Committee advances entrepreneurship and innovation across IEEE by supporting programs, resources, and initiatives that help members turn technical ideas into sustainable ventures.",
+    "logo": "/logos/18-TA-338-IEEEEntrepreneurship_Color_RGB-300x97.webp"
+  },
+  "CMED0025": {
+    "description": "IEEE-Eta Kappa Nu (IEEE-HKN) is the international honor society for electrical and computer engineering, recognizing excellence in scholarship, character, and leadership among students and professionals.",
+    "logo": "/logos/IEEEEtaKappaNuLogo-Horizontal.webp"
   }
 }

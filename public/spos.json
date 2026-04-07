@@ -2074,5 +2074,60 @@
       ],
       "output": "MGA Training Committee"
     }
+  },
+  {
+    "searchId": "CMED0025HKNBoardofGovernorsCommitteeOrganizationalSPOnull",
+    "hiddenSpoId": "CMED0025",
+    "spoName": "IEEE-Eta Kappa Nu (IEEE-HKN)",
+    "parentName": "Educational Activities Board",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Board",
+    "spoParentClass": "Organizational SPO",
+    "parentId": null,
+    "committee": "EAB Committees and IEEE-HKN",
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "HKN Board of Governors",
+        "HKN",
+        "Board",
+        "of",
+        "Governors"
+      ],
+      "output": "HKN Board of Governors"
+    }
+  },
+  {
+    "searchId": "CMTAB409IEEEEntrepreneurshipSteeringCommitteeCommitteeOrganizationalSPOCMTAB405",
+    "hiddenSpoId": "CMTAB409",
+    "spoName": "IEEE Entrepreneurship",
+    "parentName": "TAB Strategic Planning Committee",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": null,
+    "spoParentTyp": "Committee",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMTAB405",
+    "committee": "TAB Committees",
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Entrepreneurship Steering Committee",
+        "Entrepreneurship Steering Committee",
+        "IEEE",
+        "Entrepreneurship",
+        "Steering",
+        "Committee"
+      ],
+      "output": "IEEE Entrepreneurship Steering Committee"
+    }
   }
 ]
