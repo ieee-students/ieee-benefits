@@ -87,7 +87,7 @@ const BenefitCard = ({ benefit, spoInfo, spoNameToId }) => {
             <div className={`deadline-lines ${showAwaitingStatus ? 'dimmed-date' : ''}`}>
               {benefit.date && <span>{formatEventDate(benefit.date)}</span>}
               {benefit.deadline && <span>{formatDeadline(benefit.deadline)}</span>}
-              {showAwaitingStatus && <span className="awaiting-dates">(Awaiting new dates)</span>}
+              {showAwaitingStatus && <span className="awaiting-dates">(Next cycle dates to be announced)</span>}
             </div>
           </div>
         ) : (
