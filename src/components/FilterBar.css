@@ -374,21 +374,19 @@
     justify-content: flex-start;
   }
 
-  .dropdown-panel-large {
-    min-width: 280px;
-    left: 50%;
-    transform: translateX(-50%);
+  .filter-dropdown-container {
+    position: static;
   }
 
-  @keyframes panelFadeIn {
-    from {
-      opacity: 0;
-      transform: translate(-50%, 4px);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
+  .dropdown-panel,
+  .dropdown-panel-large,
+  .dropdown-panel-categories {
+    position: absolute;
+    left: var(--space-md);
+    right: var(--space-md);
+    width: auto;
+    min-width: 0;
+    transform: none;
   }
 
   .filter-bar-advanced {
@@ -432,5 +430,51 @@
   color: var(--text-muted);
   text-align: center;
   padding: var(--space-md) 0;
+}
+
+/* ── Categories Dropdown Upgrades ── */
+.dropdown-panel-categories {
+  min-width: 380px;
+}
+
+.dropdown-panel-categories .dropdown-panel-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1rem;
+  overflow-x: hidden;
+}
+
+.category-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.category-filter-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-light .category-filter-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.category-filter-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-filter-item .checkmark {
+  margin-top: 0; /* Align checkmark vertically center */
+}
+
+@media (max-width: 768px) {
+  .dropdown-panel-categories .dropdown-panel-content {
+    grid-template-columns: 1fr;
+  }
 }
 

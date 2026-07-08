@@ -1,7 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { fetchOUs, fetchCategories, fetchSpoInfo } from '../services/api';
-import { Search, ChevronDown, SlidersHorizontal, RotateCcw } from 'lucide-react';
+import {
+  Search, ChevronDown, SlidersHorizontal, RotateCcw,
+  Trophy, Award, BadgeDollarSign, GraduationCap, Landmark, Layers, Star, Map, Users, HelpCircle, Tag
+} from 'lucide-react';
 import './FilterBar.css';
+
+const iconMap = {
+  Trophy, Award, BadgeDollarSign, GraduationCap, Landmark, Layers, Star, Map, Users, HelpCircle
+};
 
 const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
   const [spos, setSpos] = useState([]);
@@ -127,6 +134,15 @@ const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
               aria-haspopup="true"
               aria-expanded={openDropdown === 'category'}
             >
+              {filters.types?.length === 1 ? (
+                (() => {
+                  const selectedCat = categories.find(c => c.title === filters.types[0]);
+                  const SelectedIcon = selectedCat ? (iconMap[selectedCat.icon] || Tag) : Tag;
+                  return <SelectedIcon size={16} style={{ color: selectedCat?.color }} />;
+                })()
+              ) : (
+                <Tag size={16} />
+              )}
               <span>
                 Category {filters.types?.length > 0 && `(${filters.types.length})`}
               </span>
@@ -134,22 +150,26 @@ const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
             </button>
 
             {openDropdown === 'category' && (
-              <div className="dropdown-panel">
+              <div className="dropdown-panel dropdown-panel-categories">
                 <div className="dropdown-panel-header">
                   <h4>Select Categories</h4>
                 </div>
                 <div className="dropdown-panel-content">
-                  {categories.map(cat => (
-                    <label key={cat.title} className="filter-label">
-                      <input
-                        type="checkbox"
-                        checked={filters.types?.includes(cat.title) || false}
-                        onChange={() => toggleFilter('types', cat.title)}
-                      />
-                      <span className="checkmark"></span>
-                      <span className="label-text">{cat.title}</span>
-                    </label>
-                  ))}
+                  {categories.map(cat => {
+                    const IconComponent = iconMap[cat.icon] || HelpCircle;
+                    return (
+                      <label key={cat.title} className="filter-label category-filter-item">
+                        <input
+                          type="checkbox"
+                          checked={filters.types?.includes(cat.title) || false}
+                          onChange={() => toggleFilter('types', cat.title)}
+                        />
+                        <span className="checkmark"></span>
+                        <IconComponent size={16} className="category-filter-icon" style={{ color: cat.color }} />
+                        <span className="label-text">{cat.title}</span>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -163,6 +183,7 @@ const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
               aria-haspopup="true"
               aria-expanded={openDropdown === 'ou'}
             >
+              <Landmark size={16} />
               <span>
                 Organization Unit {filters.sponsors?.length > 0 && `(${filters.sponsors.length})`}
               </span>

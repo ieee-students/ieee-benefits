@@ -4,9 +4,15 @@ import FilterBar from '../components/FilterBar';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
-import { fetchOUs, fetchSpoInfo } from '../services/api';
-import { Loader2 } from 'lucide-react';
+import { fetchOUs, fetchSpoInfo, fetchCategories } from '../services/api';
+import {
+  Loader2, Trophy, Award, BadgeDollarSign, GraduationCap, Landmark, Layers, Star, Map, Users, HelpCircle
+} from 'lucide-react';
 import './Explore.css';
+
+const iconMap = {
+  Trophy, Award, BadgeDollarSign, GraduationCap, Landmark, Layers, Star, Map, Users, HelpCircle
+};
 
 const Explore = () => {
   const { benefits, loading } = useBenefits();
@@ -14,6 +20,8 @@ const Explore = () => {
   const [searchParams] = useSearchParams();
   const [spoInfo, setSpoInfo] = useState({});
   const [spoNameToId, setSpoNameToId] = useState({});
+  const [categories, setCategories] = useState([]);
+  const [groupBy, setGroupBy] = useState('none');
 
   const [filters, setFilters] = useState({
     types: [],
@@ -25,6 +33,7 @@ const Explore = () => {
 
   useEffect(() => {
     fetchSpoInfo().then(setSpoInfo);
+    fetchCategories().then(setCategories);
     fetchOUs().then(spos => {
       const map = {};
       spos.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
@@ -101,38 +110,127 @@ const Explore = () => {
     });
   }, [benefits, filters]);
 
+  const groupedBenefits = useMemo(() => {
+    if (groupBy === 'none') return null;
+
+    const groups = {};
+
+    if (groupBy === 'category') {
+      categories.forEach(cat => {
+        groups[cat.title] = {
+          name: cat.title,
+          icon: cat.icon,
+          color: cat.color,
+          list: []
+        };
+      });
+
+      const fallbackKey = 'Other';
+      if (!groups[fallbackKey]) {
+        groups[fallbackKey] = { name: fallbackKey, icon: 'HelpCircle', color: '#475569', list: [] };
+      }
+
+      filteredBenefits.forEach(b => {
+        const catName = b.category || fallbackKey;
+        if (!groups[catName]) {
+          groups[catName] = { name: catName, icon: 'HelpCircle', color: '#475569', list: [] };
+        }
+        groups[catName].list.push(b);
+      });
+    } else if (groupBy === 'ou') {
+      filteredBenefits.forEach(b => {
+        const ouName = b.spoName || 'General / Unspecified';
+        if (!groups[ouName]) {
+          groups[ouName] = { name: ouName, list: [] };
+        }
+        groups[ouName].list.push(b);
+      });
+    }
+
+    const resultList = Object.values(groups).filter(g => g.list.length > 0);
+
+    if (groupBy === 'ou') {
+      resultList.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return resultList;
+  }, [filteredBenefits, groupBy, categories]);
+
   return (
     <div className="explore-page">
-      <header className="page-header">
-        <h1>Explore Opportunities</h1>
-        <p className="text-muted">Showing {filteredBenefits.length} opportunities based on current filters.</p>
-      </header>
+      <div className="explore-header-row">
+        <header className="page-header">
+          <h1>Explore Opportunities</h1>
+          <p className="text-muted">Showing {filteredBenefits.length} opportunities based on current filters.</p>
+        </header>
+
+        <div className="group-by-container">
+          <span className="group-by-label">Group By:</span>
+          <select
+            value={groupBy}
+            onChange={(e) => setGroupBy(e.target.value)}
+            className="group-by-select"
+          >
+            <option value="category">Category</option>
+            <option value="ou">Organization Unit (OU)</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+      </div>
 
       <FilterBar filters={filters} setFilters={setFilters} spoInfo={spoInfo} />
       
-      <div className="benefits-grid">
-        {loading ? (
-          <div className="loading-state" style={{ gridColumn: '1 / -1', minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
-            <Loader2 size={32} className="animate-spin" style={{ color: 'var(--primary)' }} />
-            <span>Loading Benefits Data...</span>
+      {loading ? (
+        <div className="loading-state" style={{ minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+          <Loader2 size={32} className="animate-spin" style={{ color: 'var(--primary)' }} />
+          <span>Loading Benefits Data...</span>
+        </div>
+      ) : filteredBenefits.length > 0 ? (
+        groupBy === 'none' ? (
+          <div className="benefits-grid">
+            {filteredBenefits.map(benefit => (
+              <BenefitCard key={benefit.id} benefit={benefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
+            ))}
           </div>
-        ) : filteredBenefits.length > 0 ? (
-          filteredBenefits.map(benefit => (
-            <BenefitCard key={benefit.id} benefit={benefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
-          ))
         ) : (
-          <div className="empty-state">
-            <h3>No benefits found</h3>
-            <p>Try adjusting your filters to see more results.</p>
-            <button
-              className="btn btn-primary"
-              onClick={() => setFilters({ types: [], sponsors: [], eligibility: 'both', membership: 'all', search: '' })}
-            >
-              Clear Filters
-            </button>
+          <div className="grouped-benefits-container">
+            {groupedBenefits.map(group => (
+              <div key={group.name} className="benefit-group">
+                <div className="group-header-separator">
+                  <span className="separator-line"></span>
+                  <h3 className="group-title">
+                    {groupBy === 'category' && group.icon && (
+                      (() => {
+                        const GroupIcon = iconMap[group.icon] || HelpCircle;
+                        return <GroupIcon size={18} className="group-header-icon" style={{ color: group.color, marginRight: '8px', verticalAlign: 'middle' }} />;
+                      })()
+                    )}
+                    <span style={{ verticalAlign: 'middle' }}>{group.name}</span>
+                    <span className="group-count">({group.list.length})</span>
+                  </h3>
+                  <span className="separator-line"></span>
+                </div>
+                <div className="benefits-grid">
+                  {group.list.map(benefit => (
+                    <BenefitCard key={benefit.id} benefit={benefit} spoInfo={spoInfo} spoNameToId={spoNameToId} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        )}
-      </div>
+        )
+      ) : (
+        <div className="empty-state">
+          <h3>No benefits found</h3>
+          <p>Try adjusting your filters to see more results.</p>
+          <button
+            className="btn btn-primary"
+            onClick={() => setFilters({ types: [], sponsors: [], eligibility: 'both', membership: 'all', search: '' })}
+          >
+            Clear Filters
+          </button>
+        </div>
+      )}
     </div>
   );
 };
