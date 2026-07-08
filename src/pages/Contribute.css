@@ -265,28 +265,92 @@
   margin-top: 0.2rem;
 }
 
-.checkbox-group {
+.checkbox-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
-.checkbox-label {
+.contribute-form .checkbox-card {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
+  gap: 12px;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  flex-direction: row !important; /* Override vertical layout for label */
-  font-weight: normal !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  margin-bottom: 0; /* Override general label margin-bottom */
+  font-weight: normal; /* Reset general label font-weight */
 }
 
-.checkbox-label input[type="checkbox"] {
-  margin-top: 0.2rem;
-  margin-right: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--primary);
-  cursor: pointer;
+.theme-light .contribute-form .checkbox-card {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.contribute-form .checkbox-card:hover {
+  border-color: var(--card-hover-border);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.theme-light .contribute-form .checkbox-card:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.contribute-form .checkbox-card input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkmark {
+  display: inline-block; /* Ensure width/height dimensions are respected */
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 2px solid var(--btn-border);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.contribute-form .checkbox-card input[type="checkbox"]:checked ~ .custom-checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.contribute-form .checkbox-card input[type="checkbox"]:checked ~ .custom-checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.checkbox-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
 }
 
 .form-actions {

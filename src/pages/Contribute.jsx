@@ -296,18 +296,32 @@ const Contribute = () => {
                 </div>
               </div>
 
-              <div className="form-group checkbox-group">
-                <label className="checkbox-label">
+              <div className="form-group checkbox-grid">
+                <label className="checkbox-card">
                   <input type="checkbox" name="ieeeMembershipRequired" checked={formData.ieeeMembershipRequired} onChange={handleInputChange} />
-                  <span className="checkbox-text">IEEE Membership Required [Indicate if participation or eligibility is restricted to IEEE members only. Leave unchecked if the opportunity is open to non-members.]</span>
+                  <span className="custom-checkmark"></span>
+                  <div className="checkbox-info-group">
+                    <span className="checkbox-title">IEEE Membership Required</span>
+                    <span className="checkbox-desc">Check if participation or eligibility is restricted to IEEE members only. Leave unchecked if open to non-members.</span>
+                  </div>
                 </label>
-                <label className="checkbox-label">
+                
+                <label className="checkbox-card">
                   <input type="checkbox" name="student" checked={formData.student} onChange={handleInputChange} />
-                  <span className="checkbox-text">Student-Only Eligibility [Indicate if this opportunity is limited to university students (undergraduate or postgraduate, e.g., MSc, PhD). Typically applicable to IEEE Student or Graduate Student Members.]</span>
+                  <span className="custom-checkmark"></span>
+                  <div className="checkbox-info-group">
+                    <span className="checkbox-title">Student-Only Eligibility</span>
+                    <span className="checkbox-desc">Check if this opportunity is limited strictly to university students (undergraduates, postgraduates, MSc, PhD).</span>
+                  </div>
                 </label>
-                <label className="checkbox-label">
+                
+                <label className="checkbox-card">
                   <input type="checkbox" name="annual" checked={formData.annual} onChange={handleInputChange} />
-                  <span className="checkbox-text">Annual Recurring Benefit [Indicate if this opportunity is offered annually. If selected, details will be reviewed and updated each year in coordination with you.]</span>
+                  <span className="custom-checkmark"></span>
+                  <div className="checkbox-info-group">
+                    <span className="checkbox-title">Annual Recurring Opportunity</span>
+                    <span className="checkbox-desc">Check if this opportunity is offered annually. The details will be reviewed and updated each year.</span>
+                  </div>
                 </label>
               </div>
             </div>
