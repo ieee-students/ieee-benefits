@@ -27,8 +27,8 @@ const Contribute = () => {
     ieeeMembershipRequired: false,
     student: false,
     annual: false,
-    createdByName: '',
-    createdByEmail: ''
+    createdByName: localStorage.getItem('contributor_name') || '',
+    createdByEmail: localStorage.getItem('contributor_email') || ''
   });
 
   useEffect(() => {
@@ -118,10 +118,33 @@ const Contribute = () => {
     }
   };
 
+  const handleResetForm = () => {
+    setFormData({
+      spoName: '',
+      otherSpoName: '',
+      category: '',
+      title: '',
+      description: '',
+      url: '',
+      date: '',
+      deadline: '',
+      ieeeMembershipRequired: false,
+      student: false,
+      annual: false,
+      createdByName: localStorage.getItem('contributor_name') || '',
+      createdByEmail: localStorage.getItem('contributor_email') || ''
+    });
+    setSubmitResult(null);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     setSubmitResult(null);
+
+    // Cache contributor details
+    localStorage.setItem('contributor_name', formData.createdByName || '');
+    localStorage.setItem('contributor_email', formData.createdByEmail || '');
 
     const finalSpoName = formData.spoName === 'Other' ? formData.otherSpoName : formData.spoName;
     const payload = {
@@ -136,17 +159,15 @@ const Contribute = () => {
 
       if (result.success) {
         setSubmitResult({ type: 'success', message: 'Contribution submitted. It is now pending verification.' });
-        setFormData({
-          spoName: '', otherSpoName: '', category: '', title: '', description: '', url: '',
-          date: '', deadline: '', ieeeMembershipRequired: false, student: false,
-          annual: false, createdByName: '', createdByEmail: ''
-        });
       }
     } catch (err) {
       console.error(err);
       setSubmitResult({ type: 'error', message: err.message || 'An error occurred during submission.' });
     } finally {
       setSubmitting(false);
+      if (formPaneRef.current) {
+        formPaneRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -234,10 +255,17 @@ const Contribute = () => {
           ) : (
           <form onSubmit={handleSubmit} className="contribute-form">
             {submitResult && (
-              <div className={`alert alert-${submitResult.type}`}>
-                {submitResult.message}
+              <div className={`alert alert-${submitResult.type}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'flex-start' }}>
+                <span>{submitResult.message}</span>
+                {submitResult.type === 'success' && (
+                  <button type="button" className="btn btn-secondary btn-sm" onClick={handleResetForm} style={{ alignSelf: 'flex-start' }}>
+                    Add Another Benefit
+                  </button>
+                )}
               </div>
             )}
+
+            <fieldset disabled={submitResult?.type === 'success'} style={{ border: 'none', padding: 0, margin: 0, display: 'contents' }}>
 
             <div className="form-section">
               <h3 className="section-title">Benefit Details</h3>
@@ -374,6 +402,7 @@ const Contribute = () => {
                 {submitting ? 'Submitting...' : 'Submit Contribution'}
               </button>
             </div>
+            </fieldset>
           </form>
           )}
         </div>
