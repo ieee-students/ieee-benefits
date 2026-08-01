@@ -21,7 +21,7 @@ const Explore = () => {
   const [spoInfo, setSpoInfo] = useState({});
   const [spoNameToId, setSpoNameToId] = useState({});
   const [categories, setCategories] = useState([]);
-  const [groupBy, setGroupBy] = useState('none');
+  const [groupBy, setGroupBy] = useState('category');
   const [spos, setSpos] = useState([]);
 
   const [filters, setFilters] = useState({

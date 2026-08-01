@@ -1,19 +1,19 @@
 [
   {
-    "title": "Competitions",
-    "icon": "Trophy",
-    "description": "Showcase your talent and test your skills by participating in global challenges.",
-    "linkedPage": null,
-    "color": "#2563eb",
-    "textColor": "#ffffff"
-  },
-  {
     "title": "Awards",
     "icon": "Award",
     "description": "Gain prestigious recognition for your outstanding contributions and achievements.",
     "linkedPage": null,
     "color": "#facc15",
     "textColor": "#422006"
+  },
+  {
+    "title": "Competitions",
+    "icon": "Trophy",
+    "description": "Showcase your talent and test your skills by participating in global challenges.",
+    "linkedPage": null,
+    "color": "#2563eb",
+    "textColor": "#ffffff"
   },
   {
     "title": "Funding",
