@@ -94,8 +94,8 @@ const Home = () => {
   return (
     <div className="home-dashboard">
       <section className="hero-section">
-        <h1>Unlock the Benefits of IEEE <span style={{ color: '#678e1e', WebkitTextFillColor: '#678e1e' }}>Student</span> Membership</h1>
-        <p className="subtitle">IEEE is a vast organization with countless opportunities extending far beyond Student Activities. We've curated a comprehensive collection of competitions, awards, funding, and exclusive programs from across the organization to ensure you have the resources needed to advance your technologically-oriented education and career.</p>
+        <h1>Unlock the Benefits of <span style={{ color: '#00629B', WebkitTextFillColor: '#00629B' }}>IEEE</span> Membership</h1>
+        <p className="subtitle">IEEE is a vast global organization offering countless professional and academic opportunities. We've curated a comprehensive collection of competitions, awards, funding, and exclusive programs from across the entire IEEE network to ensure you have the resources needed to leverage your membership and advance your career, research, and education.</p>
 
       </section>
 
