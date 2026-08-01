@@ -22,6 +22,7 @@ const Explore = () => {
   const [spoNameToId, setSpoNameToId] = useState({});
   const [categories, setCategories] = useState([]);
   const [groupBy, setGroupBy] = useState('none');
+  const [spos, setSpos] = useState([]);
 
   const [filters, setFilters] = useState({
     types: [],
@@ -34,12 +35,15 @@ const Explore = () => {
   useEffect(() => {
     fetchSpoInfo().then(setSpoInfo);
     fetchCategories().then(setCategories);
-    fetchOUs().then(spos => {
+    fetchOUs().then(sposData => {
+      setSpos(sposData);
       const map = {};
-      spos.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
+      sposData.forEach(s => { map[s.spoName] = s.hiddenSpoId; });
       setSpoNameToId(map);
     });
   }, []);
+
+  const predefinedSpoNames = useMemo(() => new Set(spos.map(s => s.spoName)), [spos]);
 
   // Initialize filters from URL or "forYou" flag
   useEffect(() => {
@@ -89,7 +93,13 @@ const Explore = () => {
       
       // Sponsors matching
       if (filters.sponsors?.length > 0) {
-        if (!filters.sponsors.includes(b.spoName)) return false;
+        const hasMatch = filters.sponsors.some(sName => {
+          if (sName === 'Other') {
+            return b.spoName && !predefinedSpoNames.has(b.spoName);
+          }
+          return b.spoName === sName;
+        });
+        if (!hasMatch) return false;
       }
 
       // Eligibility matching
@@ -108,7 +118,7 @@ const Explore = () => {
 
       return true;
     });
-  }, [benefits, filters]);
+  }, [benefits, filters, predefinedSpoNames]);
 
   const groupedBenefits = useMemo(() => {
     if (groupBy === 'none') return null;

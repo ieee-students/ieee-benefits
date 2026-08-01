@@ -17,6 +17,7 @@ const Contribute = () => {
 
   const [formData, setFormData] = useState({
     spoName: '',
+    otherSpoName: '',
     category: '',
     title: '',
     description: '',
@@ -55,21 +56,29 @@ const Contribute = () => {
   const getSlug = (text) => text?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || '';
 
   const generatedId = useMemo(() => {
-    const spo = spos.find(s => s.spoName === formData.spoName);
-    const hiddenSpoId = spo ? spo.hiddenSpoId : 'spoid';
+    let hiddenSpoId = 'spoid';
+    if (formData.spoName === 'Other') {
+      hiddenSpoId = getSlug(formData.otherSpoName) || 'other';
+    } else {
+      const spo = spos.find(s => s.spoName === formData.spoName);
+      if (spo) {
+        hiddenSpoId = spo.hiddenSpoId;
+      }
+    }
     const categorySlug = getSlug(formData.category) || 'category';
     const titleSlug = getSlug(formData.title) || 'title';
     return `${hiddenSpoId}-${categorySlug}-${titleSlug}`;
-  }, [formData.spoName, formData.category, formData.title, spos]);
+  }, [formData.spoName, formData.otherSpoName, formData.category, formData.title, spos]);
 
   const existingBenefits = useMemo(() => {
-    if (!formData.spoName) return [];
+    const targetSpoName = formData.spoName === 'Other' ? formData.otherSpoName : formData.spoName;
+    if (!targetSpoName) return [];
     return benefits.filter(b => {
-      if (b.spoName !== formData.spoName) return false;
+      if (b.spoName !== targetSpoName) return false;
       if (formData.category && b.category !== formData.category) return false;
       return true;
     });
-  }, [benefits, formData.spoName, formData.category]);
+  }, [benefits, formData.spoName, formData.otherSpoName, formData.category]);
 
   const formPaneRef = useRef(null);
 
@@ -87,8 +96,10 @@ const Contribute = () => {
   };
 
   const handleEditBenefit = (benefit) => {
+    const exists = spos.some(s => s.spoName === benefit.spoName);
     setFormData({
-      spoName: benefit.spoName || '',
+      spoName: exists ? (benefit.spoName || '') : 'Other',
+      otherSpoName: exists ? '' : (benefit.spoName || ''),
       category: benefit.category || '',
       title: benefit.title || '',
       description: benefit.description || '',
@@ -112,10 +123,13 @@ const Contribute = () => {
     setSubmitting(true);
     setSubmitResult(null);
 
+    const finalSpoName = formData.spoName === 'Other' ? formData.otherSpoName : formData.spoName;
     const payload = {
       ...formData,
+      spoName: finalSpoName,
       id: generatedId
     };
+    delete payload.otherSpoName;
 
     try {
       const result = await submitContribution(payload);
@@ -123,7 +137,7 @@ const Contribute = () => {
       if (result.success) {
         setSubmitResult({ type: 'success', message: 'Contribution submitted. It is now pending verification.' });
         setFormData({
-          spoName: '', category: '', title: '', description: '', url: '',
+          spoName: '', otherSpoName: '', category: '', title: '', description: '', url: '',
           date: '', deadline: '', ieeeMembershipRequired: false, student: false,
           annual: false, createdByName: '', createdByEmail: ''
         });
@@ -144,7 +158,7 @@ const Contribute = () => {
   const previewBenefit = {
     id: generatedId,
     status: 'pending',
-    spoName: formData.spoName || 'Select an Organization',
+    spoName: (formData.spoName === 'Other' ? formData.otherSpoName : formData.spoName) || 'Select an Organization',
     category: formData.category || 'Category',
     title: formData.title || 'Benefit Title',
     description: formData.description || 'Description of the opportunity will appear here.',
@@ -236,6 +250,7 @@ const Contribute = () => {
                     {spos.map(spo => (
                       <option key={spo.hiddenSpoId} value={spo.spoName}>{spo.spoName}</option>
                     ))}
+                    <option value="Other">Other (Please specify...)</option>
                   </select>
                 </div>
                 <div className="input-wrap">
@@ -248,6 +263,20 @@ const Contribute = () => {
                   </select>
                 </div>
               </div>
+
+              {formData.spoName === 'Other' && (
+                <div className="form-group">
+                  <label>Specify Organization Unit <span style={{ color: '#ef4444' }}>*</span></label>
+                  <input
+                    type="text"
+                    name="otherSpoName"
+                    value={formData.otherSpoName || ''}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="e.g. IEEE Humanitarian Activities Committee"
+                  />
+                </div>
+              )}
 
               <div className="form-group">
                 <label>Benefit Title <span style={{ color: '#ef4444' }}>*</span></label>

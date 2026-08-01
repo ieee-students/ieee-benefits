@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { fetchOUs, fetchCategories, fetchSpoInfo } from '../services/api';
+import { useBenefits } from '../hooks/useBenefits';
 import {
   Search, ChevronDown, SlidersHorizontal, RotateCcw,
   Trophy, Award, BadgeDollarSign, GraduationCap, Landmark, Layers, Star, Map, Users, HelpCircle, Tag
@@ -103,10 +104,27 @@ const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
     </label>
   );
 
+  const { benefits } = useBenefits();
+  const predefinedSpoNames = useMemo(() => new Set(spos.map(s => s.spoName)), [spos]);
+
+  const hasOtherBenefits = useMemo(() => {
+    if (!benefits) return false;
+    return benefits.some(b => b.spoName && !predefinedSpoNames.has(b.spoName));
+  }, [benefits, predefinedSpoNames]);
+
   const filteredSpos = spos.filter(s =>
     s.spoName?.toLowerCase().includes(ouSearch.toLowerCase())
   );
+  
   const committees = filteredSpos.filter(s => s.spoAcctClass === 'Organizational SPO');
+  if (hasOtherBenefits && (!ouSearch || 'other'.includes(ouSearch.toLowerCase()))) {
+    committees.push({
+      hiddenSpoId: 'other-committees',
+      spoName: 'Other',
+      spoAcctClass: 'Organizational SPO'
+    });
+  }
+
   const societies = filteredSpos.filter(s => s.spoAcctClass === 'Technical SPO');
   const geoUnits = filteredSpos.filter(s => s.spoAcctClass === 'Geographic SPO');
 

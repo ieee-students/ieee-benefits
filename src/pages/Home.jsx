@@ -26,6 +26,7 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [spoInfo, setSpoInfo] = useState({});
   const [showAllSocieties, setShowAllSocieties] = useState(false);
+  const [showAllCommittees, setShowAllCommittees] = useState(false);
   const [societyGridCols, setSocietyGridCols] = useState(6);
   const societyGridRef = useRef(null);
 
@@ -149,40 +150,94 @@ const Home = () => {
         </div>
 
         <h3 className="subsection-title">IEEE Committees</h3>
-        <div className="category-grid tight-grid" style={{ marginBottom: 'var(--space-xl)' }}>
-          {spos.filter(spo => spo.spoAcctClass === 'Organizational SPO').map(spo => {
-            let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
-            return (
-              <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
-                <div className="spo-card-header">
-                  <OrgLogo spoId={spo.hiddenSpoId} spoName={spo.spoName} spoInfo={spoInfo} variant="banner" />
-                </div>
-                <div className="spo-card-content">
-                  <h4 className="spo-card-title">{spo.spoName}</h4>
-                  <span className="spo-count">
-                    {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+        {(() => {
+          const committeeSpos = spos.filter(spo => spo.spoAcctClass === 'Organizational SPO');
+          const committeeCards = [];
 
-          <div className="category-card small-card glass-panel">
-            <div className="spo-card-header">
-              <div className="org-logo org-logo--fallback org-logo--banner">
-                <div className="org-logo-icon-container">
-                  <Layers className="fallback-icon" size={48} strokeWidth={1.5} />
+          // Predefined Organizational SPOs
+          committeeSpos.forEach(spo => {
+            let totalCount = dashboardData.sponsorsCount[spo.spoName] || 0;
+            committeeCards.push({
+              key: spo.hiddenSpoId,
+              element: (
+                <div key={spo.hiddenSpoId} className={`category-card small-card glass-panel clickable ${(!loading && totalCount > 0) ? 'has-items' : ''}`} onClick={() => exploreCategory('spo', spo.spoName)}>
+                  <div className="spo-card-header">
+                    <OrgLogo spoId={spo.hiddenSpoId} spoName={spo.spoName} spoInfo={spoInfo} variant="banner" />
+                  </div>
+                  <div className="spo-card-content">
+                    <h4 className="spo-card-title">{spo.spoName}</h4>
+                    <span className="spo-count">
+                      {loading ? <Loader2 size={14} className="animate-spin spinner-inline" /> : totalCount > 0 ? `${totalCount} ${totalCount === 1 ? 'Benefit' : 'Benefits'}` : <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )
+            });
+          });
+
+          // Other Committees card (if there are unlisted SPO benefits)
+          const predefinedSpoNames = new Set(spos.map(s => s.spoName));
+          const otherCount = benefits.filter(b => b.spoName && !predefinedSpoNames.has(b.spoName)).length;
+          if (otherCount > 0) {
+            committeeCards.push({
+              key: 'other-committees-card',
+              element: (
+                <div key="other-committees-card" className="category-card small-card glass-panel clickable has-items" onClick={() => exploreCategory('spo', 'Other')}>
+                  <div className="spo-card-header">
+                    <div className="org-logo org-logo--fallback org-logo--banner">
+                      <div className="org-logo-icon-container">
+                        <Layers className="fallback-icon" size={48} strokeWidth={1.5} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="spo-card-content">
+                    <h4 className="spo-card-title">Other Committees</h4>
+                    <span className="spo-count">
+                      {otherCount} {otherCount === 1 ? 'Benefit' : 'Benefits'}
+                    </span>
+                  </div>
+                </div>
+              )
+            });
+          }
+
+          const needsCollapse = committeeCards.length > 9;
+          const isCollapsed = needsCollapse && !showAllCommittees;
+          const displayedCards = isCollapsed ? committeeCards.slice(0, 9) : committeeCards;
+
+          return (
+            <div className="category-grid tight-grid" style={{ marginBottom: 'var(--space-xl)' }}>
+              {displayedCards.map(card => card.element)}
+              
+              {isCollapsed && (
+                <div
+                  className="category-card small-card glass-panel clickable show-all-card"
+                  onClick={() => setShowAllCommittees(true)}
+                >
+                  <ChevronDown size={32} className="show-all-icon" style={{ color: 'var(--primary)', marginBottom: '0.5rem' }} />
+                  <h4>Show All</h4>
+                  <span className="count-text">{committeeCards.length} Committees</span>
+                </div>
+              )}
+
+              {showAllCommittees && needsCollapse && (
+                <>
+                  <div className="coming-soon-banner" style={{ gridColumn: '1 / -1', textAlign: 'center', padding: 'var(--space-md) 0', color: 'var(--text-muted)', fontSize: '0.9rem', borderTop: '1px dashed rgba(255,255,255,0.1)', marginTop: 'var(--space-sm)' }}>
+                    We are continually expanding our directory. Additional IEEE Committees and organization units will be supported in future updates.
+                  </div>
+                  <div
+                    className="category-card small-card glass-panel clickable show-all-card"
+                    onClick={() => setShowAllCommittees(false)}
+                    style={{ gridColumn: '1 / -1', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', gap: 'var(--space-sm)' }}
+                  >
+                    <ChevronUp size={24} className="show-all-icon" style={{ color: 'var(--primary)' }} />
+                    <span className="count-text" style={{ fontSize: '1rem', fontWeight: 'bold' }}>Show Less</span>
+                  </div>
+                </>
+              )}
             </div>
-            <div className="spo-card-content">
-              <h4 className="spo-card-title">Expanding to more committees</h4>
-              <span className="spo-count">
-                <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Lock size={12} /> Coming Soon</span>
-              </span>
-            </div>
-          </div>
-        </div>
+          );
+        })()}
 
         <h3 className="subsection-title">IEEE Societies & Technical Councils</h3>
         {(() => {
