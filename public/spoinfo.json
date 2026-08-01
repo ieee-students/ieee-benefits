@@ -258,5 +258,9 @@
   "CMED0025": {
     "description": "IEEE-Eta Kappa Nu (IEEE-HKN) is the international honor society for electrical and computer engineering, recognizing excellence in scholarship, character, and leadership among students and professionals.",
     "logo": "/logos/IEEEEtaKappaNuLogo-Horizontal.webp"
+  },
+  "CMC6292": {
+    "description": "IEEE Industry Engagement Committee (IEC) fosters collaboration between industry and IEEE communities worldwide. Through programs, partnerships, and strategic initiatives, IEC supports career development, industry participation, and technology innovation aligned with IEEE’s mission of advancing technology for humanity.",
+    "logo": "/logos/ieee-iec.png"
   }
 }

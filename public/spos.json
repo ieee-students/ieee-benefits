@@ -2129,5 +2129,33 @@
       ],
       "output": "IEEE Entrepreneurship Steering Committee"
     }
+  },
+  {
+    "searchId": "CMC6292IEEEIndustryEngagementCommitteeCommitteeOrganizationalSPOCMC0300",
+    "hiddenSpoId": "CMC6292",
+    "spoName": "IEEE Industry Engagement Committee",
+    "parentName": "IEEE Board Of Directors",
+    "spoGpName": null,
+    "spoGgpName": null,
+    "spoAcctClass": "Organizational SPO",
+    "spoAcctType": "Committee",
+    "hasChildren": false,
+    "menuParent": "Standing",
+    "spoParentTyp": "Board",
+    "spoParentClass": "Organizational SPO",
+    "parentId": "CMC0300",
+    "committee": null,
+    "orgTags": null,
+    "orgUnitSuggest": {
+      "input": [
+        "IEEE Industry Engagement Committee",
+        "Industry Engagement Committee",
+        "IEEE",
+        "Industry",
+        "Engagement",
+        "Committee"
+      ],
+      "output": "IEEE Industry Engagement Committee"
+    }
   }
 ]
