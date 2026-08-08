@@ -93,6 +93,7 @@ benefits/
 │   ├── categories.json      # Opportunity category definitions
 │   ├── data.example.json    # Sample benefits data (fallback & reference)
 │   ├── spos.json            # IEEE organizational units (Societies, Regions, Councils)
+│   ├── spoinfo.json         # IEEE organizational units details (descriptions, logos)
 │   ├── logos/               # Brand logos
 │   └── *.png / *.svg        # Favicons and app icons
 ├── src/
@@ -119,6 +120,7 @@ benefits/
 │   └── styles/              # Shared / global stylesheets
 ├── .env.example             # Template for environment variables
 ├── vite.config.js           # Vite configuration (envPrefix settings)
+├── wrangler.jsonc           # Cloudflare Pages deployment configuration
 ├── package.json
 └── README.md                # ← You are here
 ```
@@ -295,21 +297,25 @@ Each entry includes `hiddenSpoId`, `spoName`, `parentName`, `spoAcctType`, and s
 | -------------------- | --------------------------------------- |
 | `npm run dev`        | Start development server with HMR       |
 | `npm run build`      | Create optimized production build        |
-| `npm run preview`    | Preview the production build locally     |
+| `npm run preview`    | Preview the production build locally with Wrangler |
+| `npm run deploy`     | Deploy the production build to Cloudflare Pages |
 | `npm run lint`       | Run ESLint checks                        |
 
 ---
 
 ## Deployment
 
-The production build (`npm run build`) outputs to `dist/` and can be deployed to any static hosting provider:
+The app is configured for deployment on **Cloudflare Pages** via Wrangler (using the settings in `wrangler.jsonc`).
 
-- **GitHub Pages**
-- **Netlify**
-- **Vercel**
-- **AWS S3 + CloudFront**
+```bash
+# Build the application and start a local Wrangler preview server
+npm run preview
 
-> Make sure to set the `APP_SCRIPT_URL` environment variable in your hosting provider's build settings for live data to work in production.
+# Build and deploy the application to Cloudflare Pages
+npm run deploy
+```
+
+Make sure to set the `APP_SCRIPT_URL` environment variable (and any other necessary environment variables) in your Cloudflare Pages dashboard project settings for live data to function correctly in production.
 
 ---
 
@@ -334,12 +340,9 @@ This project uses **ESLint** with the React Hooks and React Refresh plugins. Run
 | Document                      | Description                                                                         |
 | ----------------------------- | ----------------------------------------------------------------------------------- |
 | [SETUP.md](./SETUP.md)       | Google Sheet structure, Apps Script setup, deployment steps, and API reference.      |
+| [DESIGN.md](./DESIGN.md)     | IEEE Brand Identity guidelines including colors, typography, and accessibility.     |
 
 ---
-
-## License
-
-[Specify your license here]
 
 ## Acknowledgments
 
