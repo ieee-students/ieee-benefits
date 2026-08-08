@@ -327,9 +327,9 @@ const Contribute = () => {
                   required
                   rows="4"
                   placeholder="Provide a clear and concise description of the benefit."
-                  maxLength="500"
+                  maxLength="1000"
                 ></textarea>
-                <div className="char-count">{formData.description.length}/500</div>
+                <div className="char-count">{formData.description.length}/1000</div>
               </div>
 
               <div className="form-group">

@@ -26,8 +26,6 @@
 
 .preview-container {
   margin-bottom: var(--space-md);
-  /* Use pointer-events none to prevent expanding favorite click during preview? Or just let it be. */
-  pointer-events: none; 
 }
 
 .metadata-preview {
@@ -103,11 +101,11 @@
 
 .minimal-benefit-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid var(--card-border);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .minimal-benefit-list li:last-child {
@@ -118,13 +116,14 @@
   font-size: 0.6rem;
   padding: 0.15rem 0.4rem;
   white-space: nowrap;
+  margin-top: 2px; /* Align with first line of text */
 }
 
 .benefit-title {
   font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
   flex: 1;
 }
 
