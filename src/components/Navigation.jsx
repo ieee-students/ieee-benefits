@@ -24,6 +24,9 @@ const Navigation = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const isUpcomingActive = location.pathname === '/explore' && location.search.includes('upcoming=true');
+  const isExploreActive = location.pathname === '/explore' && !location.search.includes('upcoming=true');
+
   return (
     <header className="navbar glass-panel">
       <div className="nav-container">
@@ -36,7 +39,8 @@ const Navigation = () => {
         <div className="nav-right">
           <nav className="nav-links">
             <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-            <Link to="/explore" className={`nav-link ${location.pathname === '/explore' ? 'active' : ''}`}>Explore</Link>
+            <Link to="/explore" className={`nav-link ${isExploreActive ? 'active' : ''}`}>Explore</Link>
+            <Link to="/explore?upcoming=true" className={`nav-link ${isUpcomingActive ? 'active' : ''}`}>Upcoming</Link>
             {showContribute && (
               <Link to="/contribute" className={`nav-link ${location.pathname === '/contribute' ? 'active' : ''}`}>Contribute</Link>
             )}
@@ -64,7 +68,8 @@ const Navigation = () => {
 
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={toggleMobileMenu}>Home</Link>
-        <Link to="/explore" className={`nav-link ${location.pathname === '/explore' ? 'active' : ''}`} onClick={toggleMobileMenu}>Explore</Link>
+        <Link to="/explore" className={`nav-link ${isExploreActive ? 'active' : ''}`} onClick={toggleMobileMenu}>Explore</Link>
+        <Link to="/explore?upcoming=true" className={`nav-link ${isUpcomingActive ? 'active' : ''}`} onClick={toggleMobileMenu}>Upcoming</Link>
         {showContribute && (
           <Link to="/contribute" className={`nav-link ${location.pathname === '/contribute' ? 'active' : ''}`} onClick={toggleMobileMenu}>Contribute</Link>
         )}
