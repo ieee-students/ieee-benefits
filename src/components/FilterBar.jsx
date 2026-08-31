@@ -19,6 +19,7 @@ const FilterBar = ({ filters, setFilters, spoInfo: externalSpoInfo }) => {
   const [openDropdown, setOpenDropdown] = useState(null); // 'category' | 'ou' | null
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [ouSearch, setOuSearch] = useState('');
+
   const containerRef = useRef(null);
 
   const spoInfo = externalSpoInfo || localSpoInfo;

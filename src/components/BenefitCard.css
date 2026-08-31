@@ -174,3 +174,12 @@
   font-size: 0.85rem;
   border-radius: var(--radius-md);
 }
+
+/* Search Highlight */
+.search-highlight {
+  background-color: color-mix(in srgb, var(--primary) 30%, transparent);
+  color: var(--text);
+  border-radius: 2px;
+  padding: 0 2px;
+  font-weight: 600;
+}

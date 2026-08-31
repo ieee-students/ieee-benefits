@@ -1,0 +1,68 @@
+.active-filters-container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-top: calc(var(--space-md) * -0.5); /* Pull up slightly closer to FilterBar */
+  margin-bottom: var(--space-md);
+  padding: 0 var(--space-md);
+  flex-wrap: wrap;
+}
+
+.active-filters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.active-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  color: var(--primary);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.active-filter-remove {
+  background: none;
+  border: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  margin-left: 6px;
+  margin-right: -4px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.active-filter-remove:hover {
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.active-filters-clear-all {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.active-filters-clear-all:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}

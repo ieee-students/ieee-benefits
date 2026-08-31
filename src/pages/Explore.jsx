@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import FilterBar from '../components/FilterBar';
+import ActiveFilters from '../components/ActiveFilters';
 import BenefitCard from '../components/BenefitCard';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
@@ -37,12 +38,16 @@ const getEarliestTimestamp = (benefit) => {
 const Explore = () => {
   const { benefits, loading } = useBenefits();
   const { preferences } = usePreferences();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [spoInfo, setSpoInfo] = useState({});
   const [spoNameToId, setSpoNameToId] = useState({});
   const [categories, setCategories] = useState([]);
-  const [groupBy, setGroupBy] = useState('category');
-  const [sortBy, setSortBy] = useState('none');
+  const isUpcoming = searchParams.get('upcoming') === 'true';
+  const isForYou = searchParams.get('forYou') === 'true';
+
+  // Initialize state directly from URL to avoid effect loops
+  const [groupBy, setGroupBy] = useState(() => searchParams.get('groupBy') || 'category');
+  const [sortBy, setSortBy] = useState(() => searchParams.get('sortBy') || (isUpcoming ? 'date' : 'none'));
   const [spos, setSpos] = useState([]);
   const [showPastItems, setShowPastItems] = useState(false);
   const [showFutureItems, setShowFutureItems] = useState(false);
@@ -53,15 +58,50 @@ const Explore = () => {
   const pastRevealRef = useRef(null);
   const futureRevealRef = useRef(null);
 
-  const isUpcoming = searchParams.get('upcoming') === 'true';
-
-  const [filters, setFilters] = useState({
-    types: [],
-    sponsors: [],
-    eligibility: 'both',
-    membership: 'all',
-    search: ''
+  const [filters, setFilters] = useState(() => {
+    return {
+      types: searchParams.getAll('type'),
+      sponsors: searchParams.getAll('spo'),
+      eligibility: searchParams.get('eligibility') || 'both',
+      membership: searchParams.get('membership') || 'all',
+      search: searchParams.get('q') || ''
+    };
   });
+
+  // Handle "For You" overrides when preferences load
+  useEffect(() => {
+    if (isForYou && preferences) {
+      setFilters(prev => ({
+        ...prev,
+        types: preferences.interests || [],
+        sponsors: preferences.regions || [],
+        eligibility: preferences.isStudent ? 'student' : 'professional',
+        membership: preferences.isIEEEMember ? 'ieee' : 'all'
+      }));
+    }
+  }, [isForYou, preferences]);
+
+  // Sync state TO URL
+  useEffect(() => {
+    // Only update if not on "forYou" mode, or if we want to sync even in forYou mode.
+    // Let's sync to URL always, it makes it easier to share.
+    const params = new URLSearchParams();
+    
+    if (isUpcoming) params.set('upcoming', 'true');
+    if (isForYou) params.set('forYou', 'true');
+
+    if (sortBy !== 'none' && !isUpcoming) params.set('sortBy', sortBy);
+    if (groupBy !== 'category' && !isUpcoming && sortBy !== 'date') params.set('groupBy', groupBy);
+
+    filters.types.forEach(t => params.append('type', t));
+    filters.sponsors.forEach(s => params.append('spo', s));
+    
+    if (filters.eligibility !== 'both') params.set('eligibility', filters.eligibility);
+    if (filters.membership !== 'all') params.set('membership', filters.membership);
+    if (filters.search) params.set('q', filters.search);
+
+    setSearchParams(params, { replace: true });
+  }, [filters, sortBy, groupBy, isUpcoming, isForYou, setSearchParams]);
 
   useEffect(() => {
     fetchSpoInfo().then(setSpoInfo);
@@ -88,34 +128,7 @@ const Explore = () => {
     }
   }, [isUpcoming]);
 
-  // Initialize filters from URL or "forYou" flag
-  useEffect(() => {
-    const isForYou = searchParams.get('forYou') === 'true';
-    if (isForYou && preferences) {
-      setFilters({
-        types: preferences.interests || [],
-        sponsors: preferences.regions || [],
-        eligibility: preferences.isStudent ? 'student' : 'professional',
-        membership: preferences.isIEEEMember ? 'ieee' : 'all',
-        search: ''
-      });
-      return;
-    }
 
-    const typeParam = searchParams.get('type');
-    const spoParam = searchParams.get('spo');
-    const eligibilityParam = searchParams.get('eligibility');
-    const membershipParam = searchParams.get('membership');
-    const searchParam = searchParams.get('q');
-    
-    setFilters({
-      types: typeParam ? [typeParam] : [],
-      sponsors: spoParam ? [spoParam] : [],
-      eligibility: eligibilityParam || 'both',
-      membership: membershipParam || 'all',
-      search: searchParam || ''
-    });
-  }, [searchParams, preferences]);
 
   const filteredBenefits = useMemo(() => {
     return benefits.filter(b => {
@@ -478,7 +491,7 @@ const Explore = () => {
             </select>
           </div>
 
-          {!isUpcoming && (
+          {!isUpcoming && sortBy !== 'date' && (
             <div className="group-by-container">
               <span className="group-by-label">Group By:</span>
               <select
@@ -496,6 +509,7 @@ const Explore = () => {
       </div>
 
       <FilterBar filters={filters} setFilters={setFilters} spoInfo={spoInfo} />
+      <ActiveFilters filters={filters} setFilters={setFilters} />
       
       {loading ? (
         <div className="loading-state" style={{ minHeight: '300px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
