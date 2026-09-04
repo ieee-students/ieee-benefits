@@ -68,7 +68,7 @@ flowchart TD
     CP -->|"submitContribution()\nPOST text/plain"| API
 
     subgraph BE["Backend — Google"]
-        API --> GS["Google Sheet\n(tab: &quot;data&quot;)"]
+        API --> GS["Google Sheet\n(tab: 'data')"]
     end
 ```
 
