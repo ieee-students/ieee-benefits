@@ -13,6 +13,13 @@ import Contribute from './pages/Contribute';
 import OnboardingModal from './components/OnboardingModal';
 import { fetchOUs, fetchCategories } from './services/api';
 
+const RedirectToChangelog = () => {
+  useEffect(() => {
+    window.location.href = 'https://github.com/ieee-students/ieee-benefits/blob/main/CHANGELOG.md';
+  }, []);
+  return null;
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -76,6 +83,7 @@ const MainApp = () => {
             <Route path="/explore" element={<Explore />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/contribute" element={<Contribute />} />
+            <Route path="/changelog" element={<RedirectToChangelog />} />
           </Routes>
         </main>
         <Footer />
