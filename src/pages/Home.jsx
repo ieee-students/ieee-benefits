@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { useBenefits } from '../hooks/useBenefits';
 import { usePreferences } from '../context/PreferencesContext';
+import sposData from '../../public/spos.json';
+import categoriesData from '../../public/categories.json';
+import spoInfoData from '../../public/spoinfo.json';
 import { fetchOUs, fetchCategories, fetchSpoInfo } from '../services/api';
 import OrgLogo from '../components/OrgLogo';
 import './Home.css';
@@ -22,9 +25,9 @@ const Home = () => {
   const { benefits, loading } = useBenefits();
   const { preferences, setIsModalOpen } = usePreferences();
   const navigate = useNavigate();
-  const [spos, setSpos] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [spoInfo, setSpoInfo] = useState({});
+  const [spos, setSpos] = useState(sposData);
+  const [categories, setCategories] = useState(categoriesData);
+  const [spoInfo, setSpoInfo] = useState(spoInfoData);
   const [showAllSocieties, setShowAllSocieties] = useState(false);
   const [showAllCommittees, setShowAllCommittees] = useState(false);
   const [societyGridCols, setSocietyGridCols] = useState(6);
