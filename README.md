@@ -28,6 +28,7 @@ A modern, crowdsourced platform that helps IEEE members and students discover gr
 - **Discover Opportunities** — Browse awards, competitions, funding, programs, fellowships, travel grants, mentorship, and more.
 - **Personalized Recommendations** — Onboarding flow captures your interests, region, and demographics to surface a curated "For You" feed.
 - **Smart Filtering** — Filter by category, IEEE organizational unit (Society/Region/Council), membership requirement, student eligibility, and deadline.
+- **Upcoming Deadlines** — A dedicated timeline view groups opportunities by approaching deadlines (past, next 2 months, future), accessible via the "Upcoming" nav link.
 - **Favorites** — Save opportunities to your personal favorites list (persisted in `localStorage`).
 - **Crowdsourced Contributions** — Anyone can submit a new benefit via the `/contribute` page. Submissions land in the Google Sheet as `pending` and appear on the platform only after verification.
 - **Offline-First Caching** — The `BenefitsContext` seeds the UI from a `localStorage` cache instantly, then updates in the background from the API.
@@ -50,33 +51,25 @@ A modern, crowdsourced platform that helps IEEE members and students discover gr
 
 ## Architecture Overview
 
-```
-┌─────────────────────────────────────────────────┐
-│                    Frontend (Vite + React)       │
-│                                                   │
-│  BenefitsContext ──▶ fetchBenefits()             │
-│       │                   │                       │
-│       │          1. Try Apps Script API           │
-│       │             (GET ?verified=true)          │
-│       │                   │                       │
-│       │          2. Fallback: /data.json          │
-│       │                   │                       │
-│       │          3. Fallback: /data.example.json  │
-│       │                                           │
-│  Contribute Page ──▶ submitContribution()        │
-│                         POST to Apps Script       │
-└────────────────────┬────────────────────────────-─┘
-                     │
-          ┌──────────▼──────────┐
-          │  Google Apps Script  │
-          │   (Web App - doGet   │
-          │    / doPost)         │
-          └──────────┬──────────┘
-                     │
-          ┌──────────▼──────────┐
-          │   Google Sheet       │
-          │   (Sheet: "data")    │
-          └─────────────────────┘
+```mermaid
+flowchart TD
+    subgraph FE["Frontend — Vite + React"]
+        BC["BenefitsContext"]
+        CP["Contribute Page"]
+    end
+
+    BC -->|"fetchBenefits()"| API["Apps Script API\nGET ?verified=true"]
+    API -->|"✅ success"| BC
+    API -->|"❌ fail"| DJ["/data.json\n(local fallback)"]
+    DJ  -->|"✅ success"| BC
+    DJ  -->|"❌ fail"| DE["/data.example.json\n(last-resort fallback)"]
+    DE  --> BC
+
+    CP -->|"submitContribution()\nPOST text/plain"| API
+
+    subgraph BE["Backend — Google"]
+        API --> GS["Google Sheet\n(tab: &quot;data&quot;)"]
+    end
 ```
 
 For full details on setting up the Google Sheet and Apps Script backend, see **[SETUP.md](./SETUP.md)**.
@@ -98,8 +91,9 @@ benefits/
 │   └── *.png / *.svg        # Favicons and app icons
 ├── src/
 │   ├── components/          # Reusable UI components
+│   │   ├── ActiveFilters.jsx # Dismissible applied-filter chips bar
 │   │   ├── BenefitCard.jsx  # Opportunity card display
-│   │   ├── FilterSidebar.jsx # Filter controls (category, OU, eligibility)
+│   │   ├── FilterBar.jsx    # Filter controls (category, OU, eligibility, advanced)
 │   │   ├── Footer.jsx
 │   │   ├── MetaNav.jsx      # Top metadata bar
 │   │   ├── Navigation.jsx   # Primary nav bar
@@ -262,17 +256,29 @@ Each benefit object has the following fields:
 
 ### `categories.json`
 
-Defines the available opportunity categories, their icons (from Lucide), and whether they are currently active:
+Defines the available opportunity categories, their icons (from Lucide), badge colors, and whether they are currently active:
 
 ```json
 {
   "title": "Awards",
   "icon": "Award",
-  "description": "Recognize outstanding contributions and achievements.",
+  "description": "Gain prestigious recognition for your outstanding contributions.",
   "linkedPage": null,
+  "color": "#facc15",
+  "textColor": "#422006",
   "disabled": false
 }
 ```
+
+| Field | Description |
+| :--- | :--- |
+| `title` | Category name — must match the `category` field in benefit data |
+| `icon` | Lucide icon name rendered in the UI |
+| `description` | Short blurb shown on the Home dashboard |
+| `color` | Badge/accent hex color injected as a CSS variable at runtime |
+| `textColor` | Contrasting text color for the badge (ensure WCAG AA compliance) |
+| `linkedPage` | Optional URL for a dedicated category page (`null` if unused) |
+| `disabled` | If `true`, the category is defined but hidden from the UI |
 
 Categories with `"disabled": true` are defined but not yet populated with data.
 
@@ -337,10 +343,12 @@ This project uses **ESLint** with the React Hooks and React Refresh plugins. Run
 
 ## Additional Documentation
 
-| Document                      | Description                                                                         |
-| ----------------------------- | ----------------------------------------------------------------------------------- |
-| [SETUP.md](./SETUP.md)       | Google Sheet structure, Apps Script setup, deployment steps, and API reference.      |
-| [DESIGN.md](./DESIGN.md)     | IEEE Brand Identity guidelines including colors, typography, and accessibility.     |
+| Document                          | Description                                                                                          |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [SETUP.md](./SETUP.md)           | Google Sheet structure, Apps Script setup, deployment steps, and API reference.                      |
+| [DESIGN.md](./DESIGN.md)         | IEEE Brand Identity guidelines including colors, typography, and accessibility.                       |
+| [CHANGELOG.md](./CHANGELOG.md)   | Full version history and release notes, following Keep a Changelog + Semantic Versioning.            |
+| [AGENTS.md](./AGENTS.md)         | Project rules for AI coding agents — data schema, feature flags, branding, and deployment contracts. |
 
 ---
 

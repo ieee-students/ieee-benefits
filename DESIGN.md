@@ -48,8 +48,10 @@ IEEE's official colors are classified into primary, secondary/accent, and neutra
 The IEEE font family is selected for readability, flexibility, and compatibility across both print and digital mediums.
 
 ### Primary Fonts (Web & Digital)
-*   **Open Sans** (Recommended for Web)
-    *   *Usage:* Permissible and highly recommended for screen-based applications including websites, web ads, emails, and slide presentations.
+*   **Open Sans** (Primary — Body & UI Text)
+    *   *Usage:* Permissible and highly recommended for screen-based applications including websites, web ads, emails, and slide presentations. Used for all body copy, labels, navigation, and form elements.
+*   **Lora** (Serif — Headings)
+    *   *Usage:* Used for / page headings on the web app (imported via Google Fonts). Provides a professional contrast to Open Sans for section titles. Do not use for body copy or UI controls.
 *   **Calibri**
     *   *Usage:* Screen-based applications, Microsoft Word documents, and digital layouts. (Open Sans is the primary web alternative).
 *   **Formata**
