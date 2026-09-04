@@ -137,6 +137,27 @@ const Contribute = () => {
     setSubmitResult(null);
   };
 
+  // Escapes special characters in string fields so Apps Script can parse them correctly.
+  // TODO (Apps Script): Update the doPost handler to robustly handle apostrophes and
+  // other special characters server-side, so this front-end escaping becomes optional.
+  const sanitizePayload = (payload) => {
+    const escaped = {};
+    for (const [key, value] of Object.entries(payload)) {
+      if (typeof value === 'string') {
+        escaped[key] = value
+          .replace(/’/g, "\\'")   // right single quotation mark ’
+          .replace(/‘/g, "\\'")   // left single quotation mark ‘
+          .replace(/'/g, "\\'")         // straight apostrophe
+          .replace(/“/g, '\\"')   // left double quotation mark “
+          .replace(/”/g, '\\"')   // right double quotation mark ”
+          .replace(/"/g, '\\"');        // straight double quote
+      } else {
+        escaped[key] = value;
+      }
+    }
+    return escaped;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -155,7 +176,7 @@ const Contribute = () => {
     delete payload.otherSpoName;
 
     try {
-      const result = await submitContribution(payload);
+      const result = await submitContribution(sanitizePayload(payload));
 
       if (result.success) {
         setSubmitResult({ type: 'success', message: 'Contribution submitted. It is now pending verification.' });

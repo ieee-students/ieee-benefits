@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.2] - 2026-09-05
+
+### Fixed
+- Benefit submissions containing apostrophes (e.g. `IEEE's`) or quotation marks in any text field now succeed reliably; previously, these characters prevented the success response from being returned by the Apps Script backend.
+
 ## [1.5.1] - 2026-09-04
 
 ### Fixed
