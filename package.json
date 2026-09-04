@@ -1,7 +1,7 @@
 {
   "name": "IEEE Benefits",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.5.1",
   "author": "Dhammika Marasinghe <dhammikamare@gmail.com>",
   "type": "module",
   "scripts": {
